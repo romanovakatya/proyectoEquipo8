@@ -37,24 +37,24 @@ email varchar(100) not null
 
 CREATE TABLE IF NOT EXISTS ejemplares(
 id int auto_increment primary key,
-isbn varchar(13) not null,
+isbn varchar(13) default null,
 status_libre boolean default true,
-numero_paginas int not null,
-propietario int not null,
+numero_paginas int default null,
 portada varchar(255) default null,
-libro int,
-foreign key (propietario) references usuarios(id) on delete cascade on update cascade,
-foreign key (libro) references libros(id) on delete cascade on update cascade
+id_propietario int,
+id_libro int,
+foreign key (id_propietario) references usuarios(id) on delete cascade on update cascade,
+foreign key (id_libro) references libros(id) on delete cascade on update cascade
 );
 
 CREATE TABLE IF NOT EXISTS ejemplares_prestados(
 id int auto_increment primary key,
-ejemplar int,
-usuario_prestamo int,
+id_ejemplar int,
+id_usuario_prestamo int,
 inicio_prestamo date,
 fin_prestamo date,
-foreign key (ejemplar) references ejemplares(id) on delete cascade on update cascade,
-foreign key (usuario_prestamo) references usuarios(id) on delete cascade on update cascade
+foreign key (id_ejemplar) references ejemplares(id) on delete cascade on update cascade,
+foreign key (id_usuario_prestamo) references usuarios(id) on delete cascade on update cascade
 );
 
 INSERT INTO editoriales (nombre, direccion, pagina_web) VALUES ('Ediciones Europa', 'C/Antoni de Bofarull Nº12', 'https://edicioneseuropa.es/');
@@ -75,12 +75,12 @@ INSERT INTO usuarios (contrasena, nombre, apellidos, username, email) VALUES ('5
 INSERT INTO usuarios (contrasena, nombre, apellidos, username, email) VALUES ('9754541', 'Víctor', 'Cano Rodríguez', 'victorcr', 'victorcr@gmail.com');
 INSERT INTO usuarios (contrasena, nombre, apellidos, username, email) VALUES ('7544865', 'Pedro', 'López García', 'pedrolg', 'pedrolg@gmail.com');
 
-INSERT INTO ejemplares (isbn, numero_paginas, propietario, libro) VALUES ('2-7895-1235-4', 256, 1, 1);
-INSERT INTO ejemplares (isbn, numero_paginas, propietario, libro) VALUES ('8-4578-3215-3', 384, 2, 2);
-INSERT INTO ejemplares (isbn, numero_paginas, propietario, libro) VALUES ('5-4786-5687-1', 599, 3, 3);
-INSERT INTO ejemplares (isbn, numero_paginas, propietario, libro) VALUES ('7-4598-0248-3', 374, 4, 4);
-INSERT INTO ejemplares (isbn, numero_paginas, propietario, libro) VALUES ('9-7368-1974-3', 423, 5, 5);
+INSERT INTO ejemplares (isbn, numero_paginas, id_propietario, id_libro) VALUES ('2-7895-1235-4', 256, 1, 1);
+INSERT INTO ejemplares (isbn, numero_paginas, id_propietario, id_libro) VALUES ('8-4578-3215-3', 384, 2, 2);
+INSERT INTO ejemplares (isbn, numero_paginas, id_propietario, id_libro) VALUES ('5-4786-5687-1', 599, 3, 3);
+INSERT INTO ejemplares (isbn, numero_paginas, id_propietario, id_libro) VALUES ('7-4598-0248-3', 374, 4, 4);
+INSERT INTO ejemplares (isbn, numero_paginas, id_propietario, id_libro) VALUES ('9-7368-1974-3', 423, 5, 5);
 
-INSERT INTO ejemplares_prestados (ejemplar, usuario_prestamo, inicio_prestamo, fin_prestamo) VALUES (2, 4, '2021-08-20', '2021-10-20');
-INSERT INTO ejemplares_prestados (ejemplar, usuario_prestamo, inicio_prestamo, fin_prestamo) VALUES (5, 2, '2021-08-15', '2021-10-25');
-INSERT INTO ejemplares_prestados (ejemplar, usuario_prestamo, inicio_prestamo, fin_prestamo) VALUES (3, 1, '2021-08-02', '2021-10-02');
+INSERT INTO ejemplares_prestados (id_ejemplar, id_usuario_prestamo, inicio_prestamo, fin_prestamo) VALUES (2, 4, '2021-08-20', '2021-10-20');
+INSERT INTO ejemplares_prestados (id_ejemplar, id_usuario_prestamo, inicio_prestamo, fin_prestamo) VALUES (5, 2, '2021-08-15', '2021-10-25');
+INSERT INTO ejemplares_prestados (id_ejemplar, id_usuario_prestamo, inicio_prestamo, fin_prestamo) VALUES (3, 1, '2021-08-02', '2021-10-02');
