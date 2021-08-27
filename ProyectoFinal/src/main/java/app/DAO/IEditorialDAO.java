@@ -1,8 +1,8 @@
-package app.DAO;
+package app.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import app.DTO.Editorial;
+import app.dto.Editorial;
 
 public interface IEditorialDAO extends JpaRepository<Editorial, Long> {
 
