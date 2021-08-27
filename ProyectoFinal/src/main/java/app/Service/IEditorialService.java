@@ -1,8 +1,8 @@
-package app.Service;
+package app.service;
 
 import java.util.List;
 
-import app.DTO.Editorial;
+import app.dto.Editorial;
 
 public interface IEditorialService {
 
