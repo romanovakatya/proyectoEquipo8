@@ -1,12 +1,12 @@
-package app.Controller;
+package app.controller;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import app.DTO.Editorial;
-import app.Service.EditorialServiceImpl;
+import app.dto.Editorial;
+import app.service.EditorialServiceImpl;
 
 @RestController
 @RequestMapping("/api")
