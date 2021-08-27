@@ -1,12 +1,12 @@
-package app.Service;
+package app.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import app.DAO.ILibroDAO;
-import app.DTO.Libro;
+import app.dao.ILibroDAO;
+import app.dto.Libro;
 
 @Service
 public class LibroServiceImpl implements ILibroService {
