@@ -1,4 +1,4 @@
-package app.Controller;
+package app.controller;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import app.DTO.Libro;
-import app.Service.LibroServiceImpl;
+import app.dto.Libro;
+import app.service.LibroServiceImpl;
 
 @RestController
 @RequestMapping("/api")
