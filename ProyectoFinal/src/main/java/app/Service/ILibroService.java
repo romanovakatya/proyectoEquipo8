@@ -1,8 +1,8 @@
-package app.Service;
+package app.service;
 
 import java.util.List;
 
-import app.DTO.Libro;
+import app.dto.Libro;
 
 public interface ILibroService {
 
