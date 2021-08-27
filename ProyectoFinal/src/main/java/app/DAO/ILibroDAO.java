@@ -1,8 +1,8 @@
-package app.DAO;
+package app.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import app.DTO.Libro;
+import app.dto.Libro;
 
 public interface ILibroDAO extends JpaRepository<Libro, Long> {
 
