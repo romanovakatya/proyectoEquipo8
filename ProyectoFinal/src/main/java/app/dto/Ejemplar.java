@@ -1,13 +1,19 @@
 package app.dto;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
@@ -31,13 +37,22 @@ public class Ejemplar {
 	@Column(name = "portada")
 	private String portada;
 	
+	//para claves foráneas,
 	@ManyToOne
 	@JoinColumn(name = "id_propietario")
-	Propietario propietario;
+	Usuario propietario;
 
 	@ManyToOne
 	@JoinColumn(name = "id_libro")
 	Libro libro;
+	
+	//para tabla many to many,
+	
+	//es correcto?????
+	@OneToMany()
+	@JoinColumn(name="id")
+	private List<EjemplarPresta> ejemplarPrestado;
+
 
 	//constructores,
 	//por defecto,
@@ -47,7 +62,7 @@ public class Ejemplar {
 
 	//con todos los atributos,
 	public Ejemplar(Long id, String isbn, boolean statusLibre, int numeroPaginas, String portada,
-			Propietario propietario, Libro libro) {
+			Usuario propietario, Libro libro) {
 		super();
 		this.id = id;
 		this.isbn = isbn;
@@ -109,11 +124,11 @@ public class Ejemplar {
 
 	//claves foráneas,
 	
-	public Propietario getPropietario() {
+	public Usuario getPropietario() {
 		return propietario;
 	}
 
-	public void setPropietario(Propietario propietario) {
+	public void setPropietario(Usuario propietario) {
 		this.propietario = propietario;
 	}
 
@@ -124,7 +139,17 @@ public class Ejemplar {
 	public void setLibro(Libro libro) {
 		this.libro = libro;
 	}
+	
+	@JsonIgnore
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "EjemplarPresta")
+	public List<EjemplarPresta> getEjemplarPrestado() {
+		return ejemplarPrestado;
+	}
 
+	public void setEjemplarPrestado(List<EjemplarPresta> ejemplarPrestado) {
+		this.ejemplarPrestado = ejemplarPrestado;
+	}
+	
 		//para mostrar los datos de un ejemplar,
 	@Override
 	public String toString() {
