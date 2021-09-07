@@ -33,7 +33,7 @@ public class Ejemplar {
 	
 	@ManyToOne
 	@JoinColumn(name = "id_propietario")
-	Propietario propietario;
+	Usuario propietario;
 
 	@ManyToOne
 	@JoinColumn(name = "id_libro")
@@ -47,7 +47,7 @@ public class Ejemplar {
 
 	//con todos los atributos,
 	public Ejemplar(Long id, String isbn, boolean statusLibre, int numeroPaginas, String portada,
-			Propietario propietario, Libro libro) {
+			Usuario propietario, Libro libro) {
 		super();
 		this.id = id;
 		this.isbn = isbn;
@@ -109,11 +109,11 @@ public class Ejemplar {
 
 	//claves foráneas,
 	
-	public Propietario getPropietario() {
+	public Usuario getPropietario() {
 		return propietario;
 	}
 
-	public void setPropietario(Propietario propietario) {
+	public void setPropietario(Usuario propietario) {
 		this.propietario = propietario;
 	}
 
