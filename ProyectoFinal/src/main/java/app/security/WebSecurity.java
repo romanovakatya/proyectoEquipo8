@@ -44,9 +44,13 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 			.cors().and()
 			.csrf().disable()
-			.authorizeRequests().antMatchers(HttpMethod.POST, LOGIN_URL).permitAll()
-			.anyRequest().authenticated().and()
+			.authorizeRequests().antMatchers(HttpMethod.POST, LOGIN_URL).permitAll() //permitimos el acceso a /login a cualquiera
+			.anyRequest().authenticated().and() 									//cualquier otra peticion requiere autenticacion
+			
+			// Las peticiones /login pasaran previamente por este filtro
 				.addFilter(new JWTAuthenticationFilter(authenticationManager()))
+				
+				// Las demás peticiones pasarán por este filtro para validar el token
 				.addFilter(new JWTAuthorizationFilter(authenticationManager()));
 	}
 
@@ -54,6 +58,8 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 	public void configure(AuthenticationManagerBuilder auth) throws Exception {
 		// Se define la clase que recupera los usuarios y el algoritmo para procesar las passwords
 		auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder());
+		
+		//passwordEncoder.encode(password);
 	}
 
 	@Bean
