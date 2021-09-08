@@ -16,4 +16,7 @@ public interface ILibroService {
 	
 	public Libro libroXID(Long id); //Leer datos de un Libro por ID READ
 	
+	public List<Libro> libroXAutor(String autor); //Leer datos de un Libro por Autor READ
+	
+	public Libro libroXTitulo(String titulo); //Leer datos de un Libro por Titulo READ
 }
