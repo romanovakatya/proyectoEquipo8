@@ -51,7 +51,7 @@ public class LibroServiceImpl implements ILibroService {
 	}
 
 	@Override
-	public Libro libroXTitulo(String titulo) {
+	public List<Libro> libroXTitulo(String titulo) {
 		// TODO Auto-generated method stub
 		return iLibroDAO.findByTitulo(titulo);
 	}

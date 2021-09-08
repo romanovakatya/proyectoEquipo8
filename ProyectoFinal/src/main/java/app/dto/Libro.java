@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "libros")
 public class Libro {
@@ -30,11 +32,22 @@ public class Libro {
 		
 	}
 	
-	public Libro(String autor,String titulo,String descripcion,Editorial editorial) {
+	public Libro(Long id,String autor,String titulo,String descripcion,Editorial editorial) {
+		this.id = id;
 		this.autor=autor;
 		this.titulo=titulo;
 		this.descripcion=descripcion;
 		this.editorial=editorial;
+	}
+	
+	
+	//los getters y setters,
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getAutor() {
@@ -67,6 +80,16 @@ public class Libro {
 
 	public void setEditorial(Editorial editorial) {
 		this.editorial = editorial;
+	}
+	
+	@JsonIgnore
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "Ejemplar")
+	public List<Ejemplar> getEjemplar() {
+		return ejemplar;
+	}
+
+	public void setEjemplar(List<Ejemplar> ejemplar) {
+		this.ejemplar = ejemplar;
 	}
 
 	@Override
