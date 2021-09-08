@@ -32,6 +32,22 @@ public class ControllerLibro {
 		return libroServiceImpl.guardarLibro(libro);
 	}
 	
+	@GetMapping("/libros/{id}")
+	public Libro listarXID(@PathVariable(name="id")Long id){
+		return libroServiceImpl.libroXID(id);
+	}
+	
+	@GetMapping("/libros/autor/{autor}")
+	public List<Libro> listarXAutor(@PathVariable(name="autor")String autor){
+		return libroServiceImpl.libroXAutor(autor);
+	}
+	
+	@GetMapping("/libros/titulo/{titulo}")
+	public List<Libro> listarXTitulo(@PathVariable(name="titulo")String titulo){
+		return libroServiceImpl.libroXTitulo(titulo);
+	}
+	
+	
 	//Actualizar
 	@PutMapping("/libros/{id}")
 	public Libro actualizarLibro(@PathVariable(name="id")Long id,@RequestBody Libro libro) {
@@ -58,20 +74,5 @@ public class ControllerLibro {
 	public void eliminarLibro(@PathVariable(name="id")Long id) {
 		libroServiceImpl.eliminarLibro(id);
 	}
-	
-	@GetMapping("/libros/{id}")
-	public Libro listarXID(@PathVariable(name="id")Long id){
-		return libroServiceImpl.libroXID(id);
-	}
-	
-	@GetMapping("/libros/autor/{autor}")
-	public List<Libro> listarXAutor(@PathVariable(name="autor")String autor){
-		return libroServiceImpl.libroXAutor(autor);
-	}
-	
-	@GetMapping("/libros/titulo/{titulo}")
-	public Libro listarXTitulo(@PathVariable(name="titulo")String titulo){
-		return libroServiceImpl.libroXTitulo(titulo);
-	}
-	
+
 }

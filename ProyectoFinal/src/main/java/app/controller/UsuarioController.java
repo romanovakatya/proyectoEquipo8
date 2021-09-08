@@ -3,6 +3,7 @@ package app.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,8 +20,16 @@ import app.service.UsuarioServiceImpl;
 @RequestMapping("/api")
 public class UsuarioController {
 	
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	
 	@Autowired
 	UsuarioServiceImpl usuarioServImpl;
+	
+	public UsuarioController(BCryptPasswordEncoder bCryptPasswordEncoder) {
+	
+		this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+	}
+
 	
 	@GetMapping("/usuarios")
 	public List<Usuario> listarUsuarios(){
@@ -31,6 +40,8 @@ public class UsuarioController {
 	@PostMapping("/usuarios")
 	public Usuario guardarUsuario(@RequestBody Usuario usuario) {
 		
+		//para encriptar contraseña,
+		usuario.setContrasena(bCryptPasswordEncoder.encode(usuario.getContrasena()));
 		return usuarioServImpl.guardarUsuario(usuario);
 	}
 	
@@ -55,9 +66,12 @@ public class UsuarioController {
 		
 		usuario_seleccionado.setNombre(usuario.getNombre());
 		usuario_seleccionado.setApellidos(usuario.getApellidos());
-		usuario_seleccionado.setContrasena(usuario.getContrasena());
+		
+		//para encriptar contraseña,
+		usuario_seleccionado.setContrasena(bCryptPasswordEncoder.encode(usuario.getContrasena()));
 		usuario_seleccionado.setEmail(usuario.getEmail());
 		usuario_seleccionado.setUsername(usuario.getUsername());
+		usuario_seleccionado.setComments(usuario.getComments());
 		
 		usuario_actualizado = usuarioServImpl.actualizarUsuario(usuario_seleccionado);
 		

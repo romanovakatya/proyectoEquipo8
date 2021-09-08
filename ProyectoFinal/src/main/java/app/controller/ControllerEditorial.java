@@ -25,6 +25,12 @@ public class ControllerEditorial {
 		return editorialServiceImpl.guardarEditorial(editorial);
 	}
 	
+		
+	@GetMapping("/editoriales/{id}")
+	public Editorial listarXID(@PathVariable(name="id")Long id){
+		return editorialServiceImpl.editorialXID(id);
+	}
+	
 	//Actualizar
 	@PutMapping("/editoriales/{id}")
 	public Editorial actualizarEditorial(@PathVariable(name="id")Long id,@RequestBody Editorial editorial) {
@@ -49,10 +55,4 @@ public class ControllerEditorial {
 	public void eliminarEditorial(@PathVariable(name="id")Long id) {
 		editorialServiceImpl.eliminarEditorial(id);
 	}
-	
-	@GetMapping("/editoriales/{id}")
-	public Editorial listarXID(@PathVariable(name="id")Long id){
-		return editorialServiceImpl.editorialXID(id);
-	}
-	
 }

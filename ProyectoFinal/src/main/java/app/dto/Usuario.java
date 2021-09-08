@@ -17,14 +17,21 @@ public class Usuario {
 	private Long id;
 	@Column(name="contrasena")
 	private String contrasena;
+	
 	@Column(name="nombre")
 	private String nombre;
+	
 	@Column(name="apellidos")
 	private String apellidos;
+	
 	@Column(name="username")
 	private String username;
+	
 	@Column(name="email")
 	private String email;
+	
+	@Column(name="comments")
+	private String comments;
 	
 	@OneToMany
 	@JoinColumn(name="id")
@@ -46,8 +53,9 @@ public class Usuario {
 	 * @param apellidos
 	 * @param username
 	 * @param email
+	 * @param @param email
 	 */
-	public Usuario(Long id, String contrasena, String nombre, String apellidos, String username, String email) {
+	public Usuario(Long id, String contrasena, String nombre, String apellidos, String username, String email, String comments) {
 		super();
 		this.id = id;
 		this.contrasena = contrasena;
@@ -55,6 +63,7 @@ public class Usuario {
 		this.apellidos = apellidos;
 		this.username = username;
 		this.email = email;
+		this.comments = comments;
 	}
 	
 	// Getters y setters
@@ -106,6 +115,14 @@ public class Usuario {
 		this.email = email;
 	}
 	
+	public String getComments() {
+		return comments;
+	}
+
+	public void setComments(String comments) {
+		this.comments = comments;
+	}
+
 	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "EjemplarPrestado")
 	public List<EjemplarPresta> getEjemplarPrestado() {
