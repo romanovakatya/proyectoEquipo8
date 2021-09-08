@@ -1,5 +1,7 @@
 package app.dto;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -19,6 +21,10 @@ public class Libro {
 	@ManyToOne
 	@JoinColumn(name = "editorial")
 	private Editorial editorial;
+	
+	@OneToMany
+	@JoinColumn(name = "id")
+	private List<Ejemplar> ejemplar;
 	
 	public Libro() {
 		

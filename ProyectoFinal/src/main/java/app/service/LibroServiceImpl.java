@@ -44,4 +44,16 @@ public class LibroServiceImpl implements ILibroService {
 		return iLibroDAO.findById(id).get();
 	}
 
+	@Override
+	public List<Libro> libroXAutor(String autor) {
+		// TODO Auto-generated method stub
+		return iLibroDAO.findByAutor(autor);
+	}
+
+	@Override
+	public Libro libroXTitulo(String titulo) {
+		// TODO Auto-generated method stub
+		return iLibroDAO.findByTitulo(titulo);
+	}
+
 }

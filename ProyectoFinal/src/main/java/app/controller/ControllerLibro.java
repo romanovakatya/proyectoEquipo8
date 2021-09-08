@@ -64,4 +64,14 @@ public class ControllerLibro {
 		return libroServiceImpl.libroXID(id);
 	}
 	
+	@GetMapping("/libros/autor/{autor}")
+	public List<Libro> listarXAutor(@PathVariable(name="autor")String autor){
+		return libroServiceImpl.libroXAutor(autor);
+	}
+	
+	@GetMapping("/libros/titulo/{titulo}")
+	public Libro listarXTitulo(@PathVariable(name="titulo")String titulo){
+		return libroServiceImpl.libroXTitulo(titulo);
+	}
+	
 }
