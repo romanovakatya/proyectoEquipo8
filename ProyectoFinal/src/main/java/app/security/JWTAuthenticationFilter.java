@@ -22,7 +22,6 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import app.dto.Usuario;
@@ -40,24 +39,43 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 	@Override
 	public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
 			throws AuthenticationException {
+		
 		try {
+			
+			// obtenemos el body de la peticion que asumimos viene en formato JSON,
+			// Asumimos que el body tendrá el siguiente JSON  {"username":"ask", "password":"123"}
+	        // Realizamos un mapeo a nuestra clase User para tener ahi los datos,
 			Usuario credenciales = new ObjectMapper().readValue(request.getInputStream(), Usuario.class);
 
+			
+			// Finalmente autenticamos
+	        // Spring comparará el user/password recibidos
+	        // contra el que definimos en la clase SecurityConfig
 			return authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
 					credenciales.getUsername(), credenciales.getContrasena(), new ArrayList<>()));
-		} catch (IOException e) {
+		} 
+		catch (IOException e) {
+			
 			throw new RuntimeException(e);
 		}
 	}
 
+	// Método para crear el JWT y enviarlo al cliente en el header de la respuesta
+	// Si la autenticacion fue exitosa, agregamos el token a la respuesta
 	@Override
 	protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain,
 			Authentication auth) throws IOException, ServletException {
 
 		String token = Jwts.builder().setIssuedAt(new Date()).setIssuer(ISSUER_INFO)
-				.setSubject(((User)auth.getPrincipal()).getUsername())
+				.setSubject(((User) auth.getPrincipal()).getUsername())
+				
+				// Vamos a asignar un tiempo de expiracion,
 				.setExpiration(new Date(System.currentTimeMillis() + TOKEN_EXPIRATION_TIME))
+
+				// Hash con el que firmaremos la clave
 				.signWith(SignatureAlgorithm.HS512, SUPER_SECRET_KEY).compact();
+
+		// agregamos al encabezado el token,
 		response.addHeader(HEADER_AUTHORIZACION_KEY, TOKEN_BEARER_PREFIX + " " + token);
 	}
 }
