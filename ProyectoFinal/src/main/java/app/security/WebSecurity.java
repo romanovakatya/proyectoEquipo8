@@ -44,10 +44,14 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 			.cors().and()
 			.csrf().disable()
-			.authorizeRequests().antMatchers(HttpMethod.POST, LOGIN_URL).permitAll()
-			.and().authorizeRequests().antMatchers(HttpMethod.POST, "/api/usuarios").permitAll()
-			.anyRequest().authenticated().and()
+			.authorizeRequests().antMatchers(HttpMethod.POST, LOGIN_URL).permitAll() //permitimos el acceso a /login a cualquiera
+			.and().authorizeRequests().antMatchers(HttpMethod.POST, "/api/usuarios").permitAll() //permitimos el acceso a /registrarse a cualquiera
+			.anyRequest().authenticated().and() 									//cualquier otra peticion requiere autenticacion
+			
+			// Las peticiones /login pasaran previamente por este filtro
 				.addFilter(new JWTAuthenticationFilter(authenticationManager()))
+				
+				// Las demás peticiones pasarán por este filtro para validar el token
 				.addFilter(new JWTAuthorizationFilter(authenticationManager()));
 	}
 
@@ -55,6 +59,20 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 	public void configure(AuthenticationManagerBuilder auth) throws Exception {
 		// Se define la clase que recupera los usuarios y el algoritmo para procesar las passwords
 		auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder());
+		
+		
+		/*BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		String password = "password";
+		String encodedPassword = passwordEncoder.encode(password);
+		
+
+		System.out.println();
+		System.out.println("Password is         : " + password);
+		System.out.println("Encoded Password is : " + encodedPassword);
+		System.out.println();
+		
+		boolean isPasswordMatch = passwordEncoder.matches(password, encodedPassword);
+		System.out.println("Password : " + password + "   isPasswordMatch    : " + isPasswordMatch);*/
 	}
 
 	@Bean
