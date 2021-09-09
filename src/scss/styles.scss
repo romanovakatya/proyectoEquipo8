@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+/*@import "~bootstrap/dist/css/bootstrap.css";*/
+//para añadir colores a los temas del bootstrap,
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+/*@import "../../node_modules/bootstrap/scss/bootstrap";*/
+
+
+$custom-colors: (
+  "custom-bone": #EEEEE4,
+  "custom-lighter-blue": #CCE7E8,
+  "custom-light-blue": #ABDBE3,
+  "custom-blue": #1E81B0,
+  "custom-medio-blue": #154C79,
+  "custom-dark-blue": #063970,
+  "custom-light-orange": #EAB676,
+  "custom-orange": #E28743,
+  "custom-dark-orange": #E07B39,
+  "custom-light-brown": #B97455,
+  "custom-brown": #330000,
+  "custom-red": #FF0000,
+  "custom-green": #33CC00,
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+.btn-custom-blue, .btn-custom-blue:active, .btn-custom-blue:focus, .btn-custom-blue:hover
+{
+  color: white;
+}
+

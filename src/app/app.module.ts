@@ -3,14 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AddLibroComponent } from './componentsLibro/add-libro/add-libro.component';
+import { LibroDetailsComponent } from './componentsLibro/libro-details/libro-details.component';
+import { LibroListComponent } from './componentsLibro/libro-list/libro-list.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AddLibroComponent,
+    LibroDetailsComponent,
+    LibroListComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
