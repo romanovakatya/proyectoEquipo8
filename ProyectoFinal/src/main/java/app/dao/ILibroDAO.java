@@ -10,6 +10,6 @@ public interface ILibroDAO extends JpaRepository<Libro, Long> {
 
 	public List<Libro> findByAutor(String autor);
 	
-	public Libro findByTitulo(String titulo);
+	public List<Libro> findByTitulo(String titulo);
 	
 }
