@@ -1,0 +1,19 @@
+*{
+  margin: 10px;
+}
+.btn-primary{
+  float: right;
+}
+.principal{
+  max-width: 500px;
+  margin: auto;
+}
+.editorial{
+  border: 0.5px solid rgb(173, 173, 173);
+}
+h5{
+  display: inline;
+}
+.botones{
+  display: inline;
+}
