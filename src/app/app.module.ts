@@ -9,6 +9,7 @@ import { LibroListComponent } from './componentsLibro/libro-list/libro-list.comp
 import { LogoutComponent } from './components/logout/logout.component';
 import { InicioComponent } from './component-Inicio/inicio.component';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import { ComponentRegistrarseComponent } from './component-registrarse/component-registrarse.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
     LibroDetailsComponent,
     LibroListComponent,
     LogoutComponent,
-    InicioComponent
+    InicioComponent,
+    ComponentRegistrarseComponent
   ],
   imports: [
     BrowserModule,
