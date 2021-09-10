@@ -1,0 +1,33 @@
+.registrarse {
+  max-width: 500px;
+  margin: 15%;
+  margin-left: 30%;
+  background-color: #bce9ee;
+  text-align: center;
+  padding: 5%;
+}
+
+input {
+  margin: 10%;
+  width: 80%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+label {
+  margin-top: 5%;
+}
+
+input, label {
+  margin-left: 5%;
+}
+
+button {
+  margin-top: 8%;
+}
+
+.divForm {
+  text-align: left;
+}
+
+/*# sourceMappingURL=component-registrarse.component.css.map */

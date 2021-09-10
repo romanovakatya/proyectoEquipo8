@@ -1,0 +1,79 @@
+.divPrincipal {
+  width: 100%;
+  height: 100%;
+}
+.btnLogin {
+  background-color: #E5AB10 !important;
+  font-weight: bold !important;
+  border: solid;
+  width: 45% !important;
+  border-radius: none !important;
+  border-style: solid !important;
+}
+.btnRegister {
+  background-color: #78F3F1 !important;
+  font-weight: bold !important;
+  width: 45% !important;
+  margin-left: 10%;
+  border: solid;
+  border-radius: none !important;
+  border-style: solid !important;
+}
+.btnLogin:hover {
+  background-color: #F3D378 !important;
+  font-weight: bold !important;
+  border: solid;
+  width: 45% !important;
+  border-radius: none !important;
+  border-style: solid !important;
+}
+.btnRegister:hover {
+  background-color: #2CB8CC !important;
+  font-weight: bold !important;
+  width: 45% !important;
+  margin-left: 10%;
+  border: solid;
+  border-radius: none !important;
+  border-style: solid !important;
+}
+.btnLogin:active {
+  background-color: #E5AB10 !important;
+  font-weight: bold !important;
+  border: solid;
+  width: 45% !important;
+  border-radius: none !important;
+  border-style: solid !important;
+}
+.btnRegister:active {
+  background-color: #78F3F1 !important;
+  font-weight: bold !important;
+  width: 45% !important;
+  margin-left: 10%;
+  border: solid;
+  border-radius: none !important;
+  border-style: solid !important;
+}
+.divBotones {
+  margin-left: 70%;
+  margin-right: 3%;
+  margin-top: 1%;
+}
+.divh1 {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 25%;
+  margin-bottom: 0%;
+}
+h1 {
+  font-family: 'Courier New', Courier, monospace;
+  color: dodgerblue;
+  font-weight: bold;
+}
+.divimg {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 0%;
+  margin-bottom: 25%;
+}

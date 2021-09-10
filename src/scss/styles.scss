@@ -38,6 +38,45 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   color: white;
 }
 
+.btn-custom-light-brown, .btn-custom-light-brown:active, .btn-custom-light-brown:focus, .btn-custom-light-brown:hover,
+.btn-outline-custom-light-brown:active, .btn-outline-custom-light-brown:focus, .btn-outline-custom-light-brown:hover
+{
+  color: white;
+}
 
+.text-custom-green, .btn-custom-green:active, .btn-custom-green:focus, .btn-custom-green:hover{
+  color: #33CC00
+}
 
+.text-custom-red, .btn-custom-red:active, .btn-custom-red:focus, .btn-custom-red:hover{
+  color: #FF0000
+}
 
+.btn-xs, .btn-group-xs > .btn {
+  padding: 0.20rem 0.4rem;
+  font-size: 0.75rem;
+}
+
+body {
+  background-color: #ededdd;
+}
+
+.text-blue{
+  color: #063970
+}
+
+.text-dark-blue{
+  color: #032b5e
+}
+
+.text-orange{
+  color: #E28743
+}
+
+.text-brown{
+  color: #330000
+}
+
+.bg-blue{
+  background-color: #CCE7E8
+}

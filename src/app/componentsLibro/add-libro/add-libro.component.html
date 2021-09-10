@@ -1,1 +1,54 @@
-<p>add-libro works!</p>
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center">
+    <button routerLink="/libros" class="btn btn-custom-dark-blue pe-5 ps-5">Back</button>
+    <app-logout></app-logout>
+  </div>
+  <div class="card m-auto shadow bg-body rounded" style="width: 35rem;"> <!--*ngIf="character!=null; else espera"-->
+    <div class="card-body">
+      <table class="table">
+        <tbody>
+        <tr>
+          <th scope="row" class="text-end">Autor</th>
+          <td class="text-start">
+            <input type="text" id="inputAutor" class="form-control" aria-describedby="Autor">
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-end">Título</th>
+          <td class="text-start">
+            <input type="text" id="inputTitulo" class="form-control">
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-end">Número páginas</th>
+          <td class="text-start">
+            <input type="text" id="inputPaginas" class="form-control">
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-end">ISBN</th>
+          <td class="text-start">
+            <input type="text" id="inputIsbn" class="form-control">
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-end">Editorial</th>
+          <td class="text-center row me-1 ms-1">
+            <button class="btn btn-custom-light-blue" routerLink="/editoriales">Elegir Editorial</button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-end">Descripción</th>
+          <td class="text-start">
+            <textarea class="form-control" id="description" rows="3"></textarea>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="align-self-center mb-4">
+      <button class="btn btn-custom-orange pe-5 ps-5">Guardar</button> <!--(click)="saveBook()" -->
+    </div>
+  </div>
+  <!--<ng-template #espera> Esperando datos...</ng-template>-->
+</div>

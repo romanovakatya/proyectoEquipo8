@@ -1,1 +1,43 @@
-<p>libro-details works!</p>
+<!-- https://jasonwatmore.com/post/2020/09/01/angular-master-details-crud-example-->
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center">
+    <button routerLink="/libros" class="btn btn-custom-dark-blue pe-5 ps-5">Back</button>
+    <button routerLink="/libros/update/1" class="btn btn-custom-light-brown pe-5 ps-5">Editar</button>
+  </div>
+
+  <div class="card m-auto shadow bg-body rounded" style="width: 30rem;"> <!--*ngIf="character!=null; else espera"-->
+    <img src="https://lh3.googleusercontent.com/proxy/8JCbnSO9nrZL0DdtoGOu_GqInf8oCHvFIssEljibL_Q1jHUfedLAUfNq4BaVLnrM6iquWMc0oDrw3Z4di7ZYjP3dXooAUlbjk0zt2J8I7xscIcCET0yzLsP4_sbhp3zjCAYfhRZ6tlRIUg-OAUiz"
+         class="card-img-top w-50 align-self-center" alt="portada">
+    <div class="card-body">
+      <table class="table">
+        <tbody>
+        <tr>
+          <th scope="row" class="text-end">Autor </th>
+          <td class="text-start">J.K. Rowling</td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-end">Título</th>
+          <td class="text-start">Harry Potter y la Piedra Filosofal</td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-end">Número páginas</th>
+          <td class="text-start">256</td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-end">ISBN</th>
+          <td class="text-start">2-7895-1235-4</td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-end">Editorial</th>
+          <td class="text-start">Ediciones Europa</td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-end">Descripción</th>
+          <td class="text-start">Es el primer volumen de la ya clásica serie de novelas fantásticas de la autora británica J.K. Rowling.</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!--<ng-template #espera> Esperando datos...</ng-template>-->
+</div>

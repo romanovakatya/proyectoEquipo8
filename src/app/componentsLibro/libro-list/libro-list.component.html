@@ -1,42 +1,63 @@
-
-
-<div class="list row">
-  <div class="col-md-8">
-    <div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="Search by title"
-             />
-      <button class="btn btn-outline-secondary" type="button"
-              > Search
-      </button>
+<div class="mt-5">
+  <nav class="navbar navbar-expand navbar-light bg-bone">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <button class="btn btn-custom-dark-blue pe-3 ps-3" routerLink="/addLibro">Añadir libro</button>
+          </li>
+        </ul>
+        <div class="col-md-7 me-2">
+          <div class="input-group shadow-sm rounded">
+            <input class="form-control" type="search" placeholder="Buscar por el título, autor o ISBN"
+                   aria-label="Search">
+            <button class="btn btn-outline-custom-light-brown" type="submit">Buscar</button>
+          </div>
+        </div>
+        <app-logout></app-logout>
+      </div>
     </div>
-  </div>
-  <div class="col-md-6">
-    <h4>Books List</h4>
-    <ul class="list-group">
-      <li class="list-group-item">
-        libro
-      </li>
-    </ul>
-    <button class="m-3 btn btn-sm btn-danger"
-            >Remove All
-    </button>
-    <button class="btn btn-custom-blue">Test</button>
-  </div>
+  </nav>
 
+  <div class="list row justify-content-center mt-4">
+    <div class="col-md-7 ms-3">
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center mt-2 mb-2 pt-3 pb-3
+        shadow-sm bg-body rounded">
+          <span class="text-wrap fw-bold">
+          <button class="btn btn-custom-red me-2 text-custom-red btn-xs">bg</button>
+            Harry Potter y la Piedra Filosofal
+          </span>
+          <span>
+            <button class="btn btn-custom-light-blue pe-3 ps-3" routerLink="/libros/1">Mostrar</button>
+            <button class="btn btn-custom-orange ms-2 pe-3 ps-3">Eliminar</button>
+          </span>
+        </li>
 
+        <li class="list-group-item d-flex justify-content-between align-items-center mt-2 mb-2 pt-3 pb-3
+            shadow-sm bg-body rounded">
+          <span class="text-wrap fw-bold">
+          <button class="btn btn-custom-green me-2 text-custom-green btn-xs" >bg</button>
+            La larga marcha
+          </span>
+          <span>
+            <button class="btn btn-custom-light-blue pe-3 ps-3">Mostrar</button>
+            <button class="btn btn-custom-orange ms-2 pe-3 ps-3">Eliminar</button>
+          </span>
+        </li>
 
-  <div class="col-md-6">
-    <div>
-      <h4>Book</h4>
-      <div>
-        <label><strong>Title: </strong></label> title
-      </div>
-      <div>
-        <label><strong>Description: </strong></label> description
-      </div>
-
-
-      <a class="badge bg-warning">Edit</a>
+        <li class="list-group-item d-flex justify-content-between align-items-center mt-2 mb-2 pt-3 pb-3
+            shadow-sm bg-body rounded">
+          <span class="text-wrap fw-bold">
+            <button class="btn btn-custom-red me-2 text-custom-red btn-xs">bg</button>
+            El señor de los anillos
+          </span>
+          <span>
+            <button class="btn btn-custom-light-blue pe-3 ps-3">Mostrar</button>
+            <button class="btn btn-custom-orange ms-2 pe-3 ps-3">Eliminar</button>
+          </span>
+        </li>
+      </ul>
     </div>
   </div>
 </div>

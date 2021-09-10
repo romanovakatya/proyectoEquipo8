@@ -1,20 +1,28 @@
-<button class="btn btn-custom-orange" routerLink >Crear Editorial</button> <!--routerLink a Crear Editorial-->
-<button class="btn btn-custom-blue">Logout</button><!--(click)="cerrarSesion()"-->
+<div class="d-flex justify-content-between align-items-center">
+  <button class="btn btn-custom-orange pe-3 ps-3" routerLink="/addEditorial">Crear Editorial</button>
+  <!--routerLink a Crear Editorial-->
+  <!--<button class="btn btn-custom-blue">Logout</button>(click)="cerrarSesion()"-->
+  <app-logout></app-logout>
+</div>
 <div class="principal">
   <div class="input-group rounded">
-    <input type="search" class="form-control rounded" placeholder="Buscar por Nombre" aria-label="Search" aria-describedby="search-addon"/><!--[(ngModel)]="nombre"-->
-    <button class="btn btn-outline-secondary" type="button" >Buscar</button><!--(click)="buscarEditorial()"-->
+    <input type="search" class="form-control rounded" placeholder="Buscar por Nombre" aria-label="Search"
+           aria-describedby="search-addon"/><!--[(ngModel)]="nombre"-->
+    <button class="btn btn-outline-secondary" type="button">Buscar</button><!--(click)="buscarEditorial()"-->
   </div>
-  <div class="editoriales"><!--ngfor editoriales-->
-    <div class="row">
-      <div class="col">
-        <h5>Nombre Editorial</h5>
+  <div class="editoriales "><!--ngfor editoriales-->
+    <div class="row bg-white align-items-center justify-content-between rounded">
+      <div class="col fw-bold">
+        Nombre Editorial
       </div>
       <div class="col">
-        <button class="btn btn-custom-light-blue">Mostrar</button><!-- routerLink a Mostrar Editorial-->
-        <button class="btn btn-custom-bone">Actualizar</button><!-- routerLink a Actualizar Editorial-->
+        <button class="btn btn-custom-orange pe-4 ps-4">Elegir</button>
+        <button class="btn btn-custom-light-blue" routerLink="/editoriales/1">Mostrar</button><!-- routerLink a Mostrar Editorial-->
       </div>
     </div>
   </div>
 </div>
-
+<!--<div>
+  <button routerLink="/addLibro" class="btn btn-custom-dark-blue pe-5 ps-5">Back</button> puede ser no la vamos a usar
+</div>
+-->

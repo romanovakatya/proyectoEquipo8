@@ -7,6 +7,11 @@ import { MostrarEditorialComponent } from './components-Editorial/mostrar-editor
 import { PrincipalEditorialComponent } from './components-Editorial/principal-editorial/principal-editorial.component';
 import { UpdateEditorialComponent } from './components-Editorial/update-editorial/update-editorial.component';
 import { CrearEditorialComponent } from './components-Editorial/crear-editorial/crear-editorial.component';
+import {LibroPrestadoListComponent} from "./componentsLibroPrestado/libro-prestado-list/libro-prestado-list.component";
+import {LibroPrestadoDetailsComponent} from "./componentsLibroPrestado/libro-prestado-details/libro-prestado-details.component";
+import {BuscarLibroListComponent} from "./componentsBuscarLibro/buscar-libro-list/buscar-libro-list.component";
+import {BuscarLibroDetailsComponent} from "./componentsBuscarLibro/buscar-libro-details/buscar-libro-details.component";
+import {UpdateLibroComponent} from "./componentsLibro/update-libro/update-libro.component";
 
 const routes: Routes = [
  /* {
@@ -22,16 +27,31 @@ const routes: Routes = [
     path: 'addLibro', component: AddLibroComponent
   },
   {
+    path: 'libros/update/:id', component: UpdateLibroComponent
+  },
+  {
     path: 'editoriales', component:PrincipalEditorialComponent
   },
   {
-    path:'editorial/:id', component:MostrarEditorialComponent
+    path:'editoriales/:id', component:MostrarEditorialComponent
   },
   {
-    path:'actualizar/editorial/:id', component:UpdateEditorialComponent
+    path:'editoriales/actualizar/:id', component:UpdateEditorialComponent
   },
   {
-    path:'editorial', component:CrearEditorialComponent
+    path:'addEditorial', component:CrearEditorialComponent
+  },
+  {
+    path: 'libros-prestados', component: LibroPrestadoListComponent
+  },
+  {
+    path: 'libros-prestados/:id', component: LibroPrestadoDetailsComponent
+  },
+  {
+    path: 'libros-encontrados', component: BuscarLibroListComponent
+  },
+  {
+    path: 'libros-encontrados/:id', component: BuscarLibroDetailsComponent
   }
 ];
 

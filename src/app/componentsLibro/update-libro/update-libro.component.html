@@ -1,0 +1,61 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center">
+    <button routerLink="/libros/1" class="btn btn-custom-dark-blue pe-5 ps-5">Back</button>
+    <app-logout></app-logout>
+  </div>
+  <div class="card m-auto bg-blue shadow bg-body rounded" style="width: 35rem;"> <!--*ngIf="character!=null; else espera"-->
+    <div class="card-body">
+      <h4 class="card-title text-center">Actualizar libro</h4>
+      <table class="table">
+        <tbody>
+        <tr>
+          <th scope="row" class="text-end">Autor</th>
+          <td class="text-start">
+            <input type="text" id="inputAutor" class="form-control" aria-describedby="Autor" value="J.K. Rowling"/>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-end">Título</th>
+          <td class="text-start">
+            <input type="text" id="inputTitulo" class="form-control" value="Harry Potter y la Piedra Filosofal"/>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-end">Número páginas</th>
+          <td class="text-start">
+            <input type="text" id="inputPaginas" class="form-control" value="256"/>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-end">ISBN</th>
+          <td class="text-start">
+            <input type="text" id="inputIsbn" class="form-control" value="2-7895-1235-4"/>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-end">Editorial</th>
+          <td class="text-start input-group">
+            <input type="text" id="inputEditorial" class="form-control" value="Ediciones Europa" />
+            <button class="btn btn-custom-medio-blue" routerLink="/editoriales">Elegir Editorial</button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-end">Descripción</th>
+          <td class="text-start">
+            <textarea class="form-control" id="description" rows="4">Es el primer volumen de la ya clásica serie de novelas fantásticas de la autora británica J.K. Rowling.
+            </textarea>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="align-self-center mb-4">
+      <button class="btn btn-custom-orange pe-5 ps-5">Guardar</button> <!--(click)="saveBook()" -->
+    </div>
+
+  </div>
+
+
+  <!--<ng-template #espera> Esperando datos...</ng-template>-->
+</div>
+

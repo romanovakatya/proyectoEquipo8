@@ -1,25 +1,30 @@
 <div>
-  <button class="btn btn-custom-blue">Logout</button><!--(click)="cerrarSesion()"-->
-  <div class="mostrar-editorial">
+  <div class="d-flex justify-content-between align-items-center">
+    <button routerLink="/editoriales" class="btn btn-custom-dark-blue pe-5 ps-5">Back</button>
+    <app-logout></app-logout>
+  </div>
+  <!--<button class="btn btn-custom-blue">Logout</button>(click)="cerrarSesion()"-->
+  <div class="mostrar-editorial pt-2 pb-2">
 
-    <h1>Nombre Editorial</h1> <!-- Esto no esta en el prototipado de vistas -->
+    <h2>Nombre Editorial</h2> <!-- Esto no esta en el prototipado de vistas -->
 
       <div class="mb-3">
-        <input type="text" class="form-control" id="id" name = "id" readonly="readonly" value="ID Editorial"/>
+        <input type="text" class="form-control bg-white" id="id" name = "id" readonly="readonly" value="ID Editorial"/>
       </div>
 
       <div class="mb-3">
-        <input type="text" class="form-control" id="nombre" name = "nombre" readonly="readonly" value="Nombre Editorial"/>
+        <input type="text" class="form-control bg-white" id="nombre" name = "nombre" readonly="readonly" value="Nombre Editorial"/>
       </div>
 
       <div  class="mb-3">
-        <input type="text" class="form-control" id="direccion" name = "direccion" readonly="readonly" value="Direccion Editorial"/>
+        <input type="text" class="form-control bg-white" id="direccion" name = "direccion" readonly="readonly" value="Direccion Editorial"/>
       </div>
 
       <div  class="mb-3">
-        <input type="text" class="form-control" id="pagina_web" name = "pagina_web" readonly="readonly" value="Pagina Web Editorial"/>
+        <input type="text" class="form-control bg-white" id="pagina_web" name = "pagina_web" readonly="readonly" value="Pagina Web Editorial"/>
       </div>
 
-      <button class="btn btn-custom-orange">¿Elegir?</button>
+      <button class="btn btn-custom-orange pe-3 ps-3">¿Elegir?</button>
+      <button class="btn btn-custom-bone" routerLink="/editoriales/actualizar/1">Actualizar</button><!-- routerLink a Actualizar Editorial-->
   </div>
 </div>

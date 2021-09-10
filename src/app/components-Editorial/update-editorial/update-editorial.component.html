@@ -1,8 +1,12 @@
 <div>
-  <button class="btn btn-custom-blue">Logout</button><!--(click)="cerrarSesion()"-->
-  <div class="update-editorial">
+  <div class="d-flex justify-content-between align-items-center">
+    <button routerLink="/editoriales/1" class="btn btn-custom-dark-blue">Back</button>
+    <app-logout></app-logout>
+  </div>
+  <!--<button class="btn btn-custom-blue">Logout</button>(click)="cerrarSesion()"-->
+  <div class="update-editorial pt-2 pb-2">
 
-    <h1>Actualizar Editorial</h1> <!-- Esto no esta en el prototipado de vistas -->
+    <h2>Actualizar Editorial</h2> <!-- Esto no esta en el prototipado de vistas -->
 
       <div class="mb-3">
         <label for="nombre" class="form-label">Nombre</label>

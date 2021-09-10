@@ -1,23 +1,29 @@
-*{
+* {
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 5px;
   margin-right: 5px;
 }
+
 .mostrar-editorial {
   max-width: 500px;
   margin: auto;
   background-color: #bce9ee;
   text-align: center;
 }
-input{
+
+input {
   margin: auto;
   width: 75%;
   text-align: center;
 }
-.btn-primary {
+
+.btn-custom-blue {
   float: right;
 }
-h1{
+
+h1 {
   text-align: center;
 }
+
+/*# sourceMappingURL=mostrar-editorial.component.css.map */
