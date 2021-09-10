@@ -1,0 +1,32 @@
+<div>
+  <button class="btn btn-primary">Logout</button><!--(click)="cerrarSesion()"-->
+  <div class="crear-editorial">
+    <div><!--*ngIf="!submitted"-->
+      <h1>Crear Editorial</h1>
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre"name = "nombre"/><!--required [(ngModel)] = "Editorial.nombre"-->
+      </div>
+
+      <div  class="mb-3">
+        <label for="direccion" class="form-label">Direccion</label>
+        <input type="text" class="form-control" id="direccion" name = "direccion"/><!--[(ngModel)] = "Editorial.direccion"-->
+      </div>
+
+      <div  class="mb-3">
+        <label for="pagina_web" class="form-label">Pagina Web</label>
+        <input type="text" class="form-control" id="pagina_web" name = "pagina_web"/><!--[(ngModel)] = "Editorial.pagina_web"-->
+      </div>
+
+      <button class="btn btn-success">Crear</button> <!--(click)="guardarEditorial()"-->
+    </div>
+    <!--
+    <div *ngIf="submitted">
+      <h4>Editorial Creada Correctamente</h4>
+      <button class="btn btn-success" (click)="nuevaEditorial()">Crear Editorial</button>
+      <button class="btn btn-success" routerLink >Volver</button> routerLink a inicio
+    </div>
+  </div>
+</div>
+-->
+
