@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-mostrar-editorial',
   templateUrl: './mostrar-editorial.component.html',
-  styleUrls: ['./mostrar-editorial.component.css']
+  styleUrls: ['./mostrar-editorial.component.scss']
 })
 export class MostrarEditorialComponent implements OnInit {
 
