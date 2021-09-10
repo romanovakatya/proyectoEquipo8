@@ -1,16 +1,18 @@
-<button class="btn btn-success" routerLink >Crear Editorial</button> <!--routerLink a Crear Editorial-->
-<button class="btn btn-primary">Logout</button><!--(click)="cerrarSesion()"-->
+<button class="btn btn-custom-orange" routerLink >Crear Editorial</button> <!--routerLink a Crear Editorial-->
+<button class="btn btn-custom-blue">Logout</button><!--(click)="cerrarSesion()"-->
 <div class="principal">
   <div class="input-group rounded">
     <input type="search" class="form-control rounded" placeholder="Buscar por Nombre" aria-label="Search" aria-describedby="search-addon"/><!--[(ngModel)]="nombre"-->
     <button class="btn btn-outline-secondary" type="button" >Buscar</button><!--(click)="buscarEditorial()"-->
   </div>
   <div class="editoriales"><!--ngfor editoriales-->
-    <div class="editorial">
-      <h5>Nombre Editorial</h5>
-      <div class="botones">
-        <button class="btn btn-info">Mostrar</button><!-- routerLink a Mostrar Editorial-->
-        <button class="btn btn-secondary">Actualizar</button><!-- routerLink a Actualizar Editorial-->
+    <div class="row">
+      <div class="col">
+        <h5>Nombre Editorial</h5>
+      </div>
+      <div class="col">
+        <button class="btn btn-custom-light-blue">Mostrar</button><!-- routerLink a Mostrar Editorial-->
+        <button class="btn btn-custom-bone">Actualizar</button><!-- routerLink a Actualizar Editorial-->
       </div>
     </div>
   </div>
