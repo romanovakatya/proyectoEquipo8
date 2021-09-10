@@ -12290,4 +12290,8 @@ textarea.form-control-lg {
   color: white;
 }
 
+.btn-custom-orange, .btn-custom-orange:active, .btn-custom-orange:focus, .btn-custom-orange:hover {
+  color: white;
+}
+
 /*# sourceMappingURL=styles.css.map */

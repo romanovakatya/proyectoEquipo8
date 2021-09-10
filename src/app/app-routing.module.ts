@@ -5,8 +5,8 @@ import {LibroDetailsComponent} from "./componentsLibro/libro-details/libro-detai
 import {AddLibroComponent} from "./componentsLibro/add-libro/add-libro.component";
 
 const routes: Routes = [
- /* {
-    path: ''
+  /*{
+    path: '', redirectTo: 'books', pathMatch: 'full'
   },*/
   {
     path: 'libros', component: LibroListComponent
