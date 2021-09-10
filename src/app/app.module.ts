@@ -7,6 +7,7 @@ import { AddLibroComponent } from './componentsLibro/add-libro/add-libro.compone
 import { LibroDetailsComponent } from './componentsLibro/libro-details/libro-details.component';
 import { LibroListComponent } from './componentsLibro/libro-list/libro-list.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { InicioComponent } from './component-Inicio/inicio.component';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
@@ -15,7 +16,8 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
     AddLibroComponent,
     LibroDetailsComponent,
     LibroListComponent,
-    LogoutComponent
+    LogoutComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
