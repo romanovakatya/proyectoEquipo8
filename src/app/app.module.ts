@@ -19,6 +19,8 @@ import { LibroPrestadoDetailsComponent } from './componentsLibroPrestado/libro-p
 import { BuscarLibroListComponent } from './componentsBuscarLibro/buscar-libro-list/buscar-libro-list.component';
 import { BuscarLibroDetailsComponent } from './componentsBuscarLibro/buscar-libro-details/buscar-libro-details.component';
 import { UpdateLibroComponent } from './componentsLibro/update-libro/update-libro.component';
+import { ComponentContactoComponent } from './component-contacto/component-contacto.component';
+import { ClipboardModule } from 'ngx-clipboard';
 
 
 @NgModule({
@@ -39,11 +41,13 @@ import { UpdateLibroComponent } from './componentsLibro/update-libro/update-libr
     BuscarLibroListComponent,
     BuscarLibroDetailsComponent,
     UpdateLibroComponent,
+    ComponentContactoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    ClipboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
