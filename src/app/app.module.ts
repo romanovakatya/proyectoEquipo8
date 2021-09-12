@@ -21,6 +21,7 @@ import { BuscarLibroDetailsComponent } from './componentsBuscarLibro/buscar-libr
 import { UpdateLibroComponent } from './componentsLibro/update-libro/update-libro.component';
 import { ComponentContactoComponent } from './component-contacto/component-contacto.component';
 import { ClipboardModule } from 'ngx-clipboard';
+import { ComponentLoginComponent } from './component-login/component-login.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { ClipboardModule } from 'ngx-clipboard';
     BuscarLibroDetailsComponent,
     UpdateLibroComponent,
     ComponentContactoComponent,
+    ComponentLoginComponent,
   ],
   imports: [
     BrowserModule,
