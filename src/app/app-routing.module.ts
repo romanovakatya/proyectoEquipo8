@@ -13,7 +13,6 @@ import {BuscarLibroListComponent} from "./componentsBuscarLibro/buscar-libro-lis
 import {BuscarLibroDetailsComponent} from "./componentsBuscarLibro/buscar-libro-details/buscar-libro-details.component";
 import {UpdateLibroComponent} from "./componentsLibro/update-libro/update-libro.component";
 import { ComponentContactoComponent } from './component-contacto/component-contacto.component';
-import { ComponentRegistrarseComponent } from './component-registrarse/component-registrarse.component';
 
 const routes: Routes = [
  /* {
@@ -57,9 +56,6 @@ const routes: Routes = [
   },
   {
     path: 'contacts/:id', component: ComponentContactoComponent
-  },
-  {
-    path: 'registrarse', component: ComponentRegistrarseComponent
   }
 ];
 
