@@ -44,4 +44,10 @@ public class EditorialServiceImpl implements IEditorialService {
 		return iEditorialDAO.findById(id).get();
 	}
 
+	@Override
+	public Editorial editorialXNombre(String nombre) {
+		// TODO Auto-generated method stub
+		return iEditorialDAO.findByNombre(nombre);
+	}
+
 }
