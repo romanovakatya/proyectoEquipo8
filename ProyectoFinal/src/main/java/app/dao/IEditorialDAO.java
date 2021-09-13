@@ -6,4 +6,6 @@ import app.dto.Editorial;
 
 public interface IEditorialDAO extends JpaRepository<Editorial, Long> {
 
+	public Editorial findByNombre(String nombre);
+	
 }
