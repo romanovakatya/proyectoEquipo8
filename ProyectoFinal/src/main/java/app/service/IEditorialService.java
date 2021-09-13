@@ -16,4 +16,6 @@ public interface IEditorialService {
 	
 	public Editorial editorialXID(Long id); //Leer datos de una Editorial por ID READ
 	
+	public Editorial editorialXNombre(String nombre); //Leer datos de una Editorial por Nombre READ
+	
 }
