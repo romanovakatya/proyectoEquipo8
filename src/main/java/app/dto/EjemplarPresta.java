@@ -26,7 +26,7 @@ public class EjemplarPresta {
 
 	@ManyToOne
 	@JoinColumn(name = "id_usuario_prestamo")
-	Usuario usuario_prestamo;
+	Usuario usuarioPrestamo;
 
 	@Column(name = "inicio_prestamo")
 	private Date inicio_prestamo;
@@ -46,7 +46,7 @@ public class EjemplarPresta {
 		super();
 		this.id = id;
 		this.ejemplar = ejemplar;
-		this.usuario_prestamo = usuario_prestamo;
+		this.usuarioPrestamo = usuario_prestamo;
 		this.inicio_prestamo = inicio_prestamo;
 		this.fin_prestamo = fin_prestamo;
 	}
@@ -70,11 +70,11 @@ public class EjemplarPresta {
 	}
 
 	public Usuario getUsuario_prestamo() {
-		return usuario_prestamo;
+		return usuarioPrestamo;
 	}
 
 	public void setUsuario_prestamo(Usuario usuario_prestamo) {
-		this.usuario_prestamo = usuario_prestamo;
+		this.usuarioPrestamo = usuario_prestamo;
 	}
 
 	public Date getInicio_prestamo() {
@@ -96,7 +96,7 @@ public class EjemplarPresta {
 	//para mostrar toda la información sobre un ejemplar prestado,
 	@Override
 	public String toString() {
-		return "EjemplarPresta [id=" + id + ", ejemplar=" + ejemplar + ", usuario_prestamo=" + usuario_prestamo
+		return "EjemplarPresta [id=" + id + ", ejemplar=" + ejemplar + ", usuario_prestamo=" + usuarioPrestamo
 				+ ", inicio_prestamo=" + inicio_prestamo + ", fin_prestamo=" + fin_prestamo + "]";
 	}
 
