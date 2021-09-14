@@ -46,7 +46,7 @@ public class EditorialServiceImpl implements IEditorialService {
 
 	@Override
 	public Editorial editorialXNombre(String nombre) {
-		// TODO Auto-generated method stub
+	
 		return iEditorialDAO.findByNombre(nombre);
 	}
 

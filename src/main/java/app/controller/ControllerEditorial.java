@@ -26,12 +26,13 @@ public class ControllerEditorial {
 	}
 	
 	@GetMapping("/editoriales/{id}")
-	public Editorial listarXID(@PathVariable(name="id")Long id){
+	public Editorial listarXID(@PathVariable(name="id") Long id){
 		return editorialServiceImpl.editorialXID(id);
 	}
 	
-	@GetMapping("/editoriales/{nombre}")
-	public Editorial listarXNombre(@PathVariable(name="nombre")String nombre){
+	@GetMapping("/editoriales/nombre/{nombre}")
+	public Editorial listarXNombre(@PathVariable(name="nombre") String nombre){
+
 		return editorialServiceImpl.editorialXNombre(nombre);
 	}
 	
