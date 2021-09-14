@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../_services/auth.service";
 import {TokenStorageService} from "../_services/token-storage.service";
+import {HttpResponse} from "@angular/common/http";
+import {first} from "rxjs/operators";
 
 @Component({
   selector: 'app-component-login',
@@ -31,18 +33,23 @@ export class LoginComponent implements OnInit {
   onSubmit(): void {
     const {username, password} = this.form;
 
-    this.authService.login(username, password).subscribe(
-      data => {
-        console.log(username);
-        console.log(password);
-        console.log(data);
-        this.tokenStorage.saveToken(data.accessToken);
-        this.tokenStorage.saveUser(data);
-
-        this.isLoginFailed = false;
+    this.authService.login(username, password)
+      .pipe(first())
+      .subscribe(
+      (data: HttpResponse<any>) => {
+        console.log(data.headers);
+        console.log(data.headers.get('Authorization'));
+        this.tokenStorage.saveToken(data.headers.get('Authorization'));
+       /* this.isLoginFailed = false;
         this.isLoggedIn = true;
-        this.reloadPage();
+        this.reloadPage();*/
+       /*
+       this.tokenStorage.saveToken(data.accessToken);
+       this.tokenStorage.saveUser(data);
+        */
+
       },
+
       error => {
         this.errorMessage = error.error.message;
         console.log(error);

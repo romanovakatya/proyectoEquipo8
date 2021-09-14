@@ -30,8 +30,8 @@ export class AppComponent {
     }
   }
 
-  /*logout() : void {
+  logout() : void {
     this.tokenStorageService.signOut();
     window.location.reload();
-  }*/
+  }
 }

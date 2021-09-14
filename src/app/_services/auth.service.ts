@@ -1,12 +1,14 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {map} from "rxjs/operators";
 
-const AUTH_API = 'https://libro-systems.herokuapp.com/';
-//const AUTH_API = 'http://localhost:8181/';
+//const AUTH_API = 'https://libro-systems.herokuapp.com/';
+const AUTH_API = 'http://localhost:8181/';
 
 const httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/json'})
+  headers: new HttpHeaders({'Content-Type': 'application/json'}),
+  observe: 'response' as 'body'
 }
 
 @Injectable({
@@ -23,7 +25,10 @@ export class AuthService {
     return this.http.post(AUTH_API + 'login', {
      'username': username,
      'contrasena': password
-    }, httpOptions);
+    }, httpOptions)
+      .pipe(map(user => {
+        return user;
+      }))
   }
 
   //para poder registrarse a la app,

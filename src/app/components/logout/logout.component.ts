@@ -14,9 +14,9 @@ export class LogoutComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  logout() : void {
+ /* logout() : void {
     this.tokenStorageService.signOut();
     window.location.reload();
-    this.router.navigate(['inicio']);
-  }
+    //this.router.navigate(['inicio']);
+  }*/
 }
