@@ -4,6 +4,12 @@
 <div>
   <div class="d-flex justify-content-between align-items-center">
     <button class="btn btn-custom-dark-blue pe-5 ps-5">Back</button> <!--routerLink="//libros-prestados/1"-->
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="copiado">
+      Email Copiado
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="copiar()"></button>
+    </div>
+
     <app-logout></app-logout>
   </div>
   <!--<button class="btn btn-custom-blue">Logout</button>(click)="cerrarSesion()"-->
@@ -25,7 +31,7 @@
 
       <div  class="mb-3">
         <input type="text" #email class="form-control bg-white" id="email" name = "email" readonly="readonly" value="Email Propietario"/>
-        <button [ngxClipboard]="email" class="btn btn-custom-bone"><i class="bi bi-clipboard"></i></button>
+        <button [ngxClipboard]="email" (click)="copiar()" class="btn btn-custom-bone"><i class="bi bi-clipboard"></i></button>
       </div>
   </div>
 </div>
