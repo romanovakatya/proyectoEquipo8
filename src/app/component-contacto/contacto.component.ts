@@ -7,11 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactoComponent implements OnInit {
 
+  copiado = false;
+
   constructor(
   ) { }
 
   ngOnInit(): void {
   }
 
+  copiar(){
+    if(this.copiado){
+      this.copiado=false;
+    }else{
+      this.copiado=true;
+    }
+  }
 
 }
