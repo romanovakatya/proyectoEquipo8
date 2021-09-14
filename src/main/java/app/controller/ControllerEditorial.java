@@ -32,6 +32,7 @@ public class ControllerEditorial {
 	
 	@GetMapping("/editoriales/nombre/{nombre}")
 	public Editorial listarXNombre(@PathVariable(name="nombre") String nombre){
+
 		return editorialServiceImpl.editorialXNombre(nombre);
 	}
 	

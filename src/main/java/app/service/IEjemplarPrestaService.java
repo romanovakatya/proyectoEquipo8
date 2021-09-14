@@ -2,6 +2,7 @@ package app.service;
 
 import java.util.List;
 
+import app.dto.Usuario;
 import app.dto.EjemplarPresta;
 
 public interface IEjemplarPrestaService {
@@ -17,4 +18,6 @@ public interface IEjemplarPrestaService {
 
 		public void eliminarEjemplarPrestado(long id);// Elimina el ejemplarPrestado DELETE
 
+		public List<EjemplarPresta> ejemplarPrestadoXUsuario(Usuario usuario); // Leer datos de un ejemplar Prestado por Usuario READ
+		
 }
