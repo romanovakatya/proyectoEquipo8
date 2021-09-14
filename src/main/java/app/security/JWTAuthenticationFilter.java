@@ -79,8 +79,15 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 				.signWith(SignatureAlgorithm.HS512, SUPER_SECRET_KEY).compact();
 
 		// agregamos al encabezado el token,
+		response.addHeader("Access-Control-Expose-Headers", "Authorization");
+		response.addHeader("Access-Control-Allow-Headers", "Authorization, X-PINGOTHER, Origin, X-Requested-With, Content-Type, Accept, X-Custom-header");
 		response.addHeader(HEADER_AUTHORIZACION_KEY, TOKEN_BEARER_PREFIX + " " + token);
 		
-		System.out.println(TOKEN_BEARER_PREFIX + " " + token);
+		/*String responseToClient= "HEADER_AUTHORIZACION_KEY, TOKEN_BEARER_PREFIX" + token;
+
+		/*response.setStatus(HttpServletResponse.SC_OK);
+		response.getWriter().write(responseToClient);
+		response.getWriter().flush();
+		System.out.println(TOKEN_BEARER_PREFIX + " " + token);*/
 	}
 }
