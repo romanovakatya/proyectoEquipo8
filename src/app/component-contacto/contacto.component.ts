@@ -15,12 +15,8 @@ export class ContactoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  copiar(){
-    if(this.copiado){
-      this.copiado=false;
-    }else{
-      this.copiado=true;
-    }
+  copiar(valor:boolean){
+      this.copiado=valor;
   }
 
 }
