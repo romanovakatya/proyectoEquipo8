@@ -205,7 +205,7 @@ AppModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵ�
         _componentsLibro_libro_list_libro_list_component__WEBPACK_IMPORTED_MODULE_4__.LibroListComponent,
         _components_logout_logout_component__WEBPACK_IMPORTED_MODULE_5__.LogoutComponent,
         _component_Inicio_inicio_component__WEBPACK_IMPORTED_MODULE_6__.InicioComponent,
-        _component_registrarse_component_registrarse_component__WEBPACK_IMPORTED_MODULE_7__.ComponentRegistrarseComponent,
+        _component_registrarse_component_registrarse_component__WEBPACK_IMPORTED_MODULE_7__.RegisterComponent,
         _components_Editorial_principal_editorial_principal_editorial_component__WEBPACK_IMPORTED_MODULE_8__.PrincipalEditorialComponent,
         _components_Editorial_mostrar_editorial_mostrar_editorial_component__WEBPACK_IMPORTED_MODULE_9__.MostrarEditorialComponent,
         _components_Editorial_crear_editorial_crear_editorial_component__WEBPACK_IMPORTED_MODULE_10__.CrearEditorialComponent], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_12__.BrowserModule,
@@ -269,24 +269,24 @@ InicioComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__
 
 /***/ 59:
 /*!**************************************************************************!*\
-  !*** ./src/app/component-registrarse/component-registrarse.component.ts ***!
+  !*** ./src/app/component-registrarse/register.component.ts ***!
   \**************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "ComponentRegistrarseComponent": () => (/* binding */ ComponentRegistrarseComponent)
+/* harmony export */   "RegisterComponent": () => (/* binding */ RegisterComponent)
 /* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 2316);
 
-class ComponentRegistrarseComponent {
+class RegisterComponent {
     constructor() { }
     ngOnInit() {
     }
 }
-ComponentRegistrarseComponent.ɵfac = function ComponentRegistrarseComponent_Factory(t) { return new (t || ComponentRegistrarseComponent)(); };
-ComponentRegistrarseComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ComponentRegistrarseComponent, selectors: [["app-component-registrarse"]], decls: 16, vars: 0, consts: [[1, "registrarse"], [1, "mb-3", "divForm"], ["for", "username", 1, "form-label"], ["type", "text", "id", "username", "name", "username", 1, "form-control"], ["for", "contrase\u00F1a", 1, "form-label"], ["type", "password", "id", "contrase\u00F1a", "name", "contrase\u00F1a", 1, "form-control"], ["for", "repetir_contrase\u00F1a", 1, "form-label"], ["type", "password", "id", "repetir_contrase\u00F1a", "name", "repetir_contrase\u00F1a", 1, "form-control"], [1, "btn", "btn-success"]], template: function ComponentRegistrarseComponent_Template(rf, ctx) { if (rf & 1) {
+RegisterComponent.ɵfac = function ComponentRegistrarseComponent_Factory(t) { return new (t || RegisterComponent)(); };
+RegisterComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: RegisterComponent, selectors: [["app-component-registrarse"]], decls: 16, vars: 0, consts: [[1, "registrarse"], [1, "mb-3", "divForm"], ["for", "username", 1, "form-label"], ["type", "text", "id", "username", "name", "username", 1, "form-control"], ["for", "contrase\u00F1a", 1, "form-label"], ["type", "password", "id", "contrase\u00F1a", "name", "contrase\u00F1a", 1, "form-control"], ["for", "repetir_contrase\u00F1a", 1, "form-label"], ["type", "password", "id", "repetir_contrase\u00F1a", "name", "repetir_contrase\u00F1a", 1, "form-control"], [1, "btn", "btn-success"]], template: function ComponentRegistrarseComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 1);

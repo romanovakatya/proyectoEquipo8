@@ -9,7 +9,7 @@ import { LibroListComponent } from './componentsLibro/libro-list/libro-list.comp
 import { LogoutComponent } from './components/logout/logout.component';
 import { InicioComponent } from './component-Inicio/inicio.component';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
-import { ComponentRegistrarseComponent } from './component-registrarse/component-registrarse.component';
+import { RegisterComponent } from './component-register/register.component';
 import {PrincipalEditorialComponent} from "./components-Editorial/principal-editorial/principal-editorial.component";
 import {MostrarEditorialComponent} from "./components-Editorial/mostrar-editorial/mostrar-editorial.component";
 import {CrearEditorialComponent} from "./components-Editorial/crear-editorial/crear-editorial.component";
@@ -19,9 +19,13 @@ import { LibroPrestadoDetailsComponent } from './componentsLibroPrestado/libro-p
 import { BuscarLibroListComponent } from './componentsBuscarLibro/buscar-libro-list/buscar-libro-list.component';
 import { BuscarLibroDetailsComponent } from './componentsBuscarLibro/buscar-libro-details/buscar-libro-details.component';
 import { UpdateLibroComponent } from './componentsLibro/update-libro/update-libro.component';
-import { ComponentContactoComponent } from './component-contacto/component-contacto.component';
+import { ContactoComponent } from './component-contacto/contacto.component';
 import { ClipboardModule } from 'ngx-clipboard';
-import { ComponentLoginComponent } from './component-login/component-login.component';
+import { LoginComponent } from './component-login/login.component';
+import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import {authInterceptorProviders} from "./_helpers/auth.interceptor";
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -32,7 +36,7 @@ import { ComponentLoginComponent } from './component-login/component-login.compo
     LibroListComponent,
     LogoutComponent,
     InicioComponent,
-    ComponentRegistrarseComponent,
+    RegisterComponent,
     PrincipalEditorialComponent,
     MostrarEditorialComponent,
     CrearEditorialComponent,
@@ -42,16 +46,19 @@ import { ComponentLoginComponent } from './component-login/component-login.compo
     BuscarLibroListComponent,
     BuscarLibroDetailsComponent,
     UpdateLibroComponent,
-    ComponentContactoComponent,
-    ComponentLoginComponent,
+    ContactoComponent,
+    LoginComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    ClipboardModule
+    ClipboardModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

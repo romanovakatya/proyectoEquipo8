@@ -12,13 +12,28 @@ import {LibroPrestadoDetailsComponent} from "./componentsLibroPrestado/libro-pre
 import {BuscarLibroListComponent} from "./componentsBuscarLibro/buscar-libro-list/buscar-libro-list.component";
 import {BuscarLibroDetailsComponent} from "./componentsBuscarLibro/buscar-libro-details/buscar-libro-details.component";
 import {UpdateLibroComponent} from "./componentsLibro/update-libro/update-libro.component";
-import { ComponentContactoComponent } from './component-contacto/component-contacto.component';
-import { ComponentRegistrarseComponent } from './component-registrarse/component-registrarse.component';
+import { ContactoComponent } from './component-contacto/contacto.component';
+import { RegisterComponent } from './component-register/register.component';
+import {LoginComponent} from "./component-login/login.component";
+import {InicioComponent} from "./component-Inicio/inicio.component";
+import {HomeComponent} from "./components/home/home.component";
 
 const routes: Routes = [
- /* {
-    path: ''
+  /*{
+    path: '', redirectTo: 'home', pathMatch: 'full'
   },*/
+  {
+  path: 'home', component: HomeComponent
+  },
+  {
+    path: 'inicio', component: InicioComponent
+  },
+  {
+    path: 'register', component: RegisterComponent
+  },
+  {
+    path: 'login', component: LoginComponent
+  },
   {
     path: 'libros', component: LibroListComponent
   },
@@ -56,10 +71,7 @@ const routes: Routes = [
     path: 'libros-encontrados/:id', component: BuscarLibroDetailsComponent
   },
   {
-    path: 'contacts/:id', component: ComponentContactoComponent
-  },
-  {
-    path: 'registrarse', component: ComponentRegistrarseComponent
+    path: 'contacts/:id', component: ContactoComponent
   }
 ];
 

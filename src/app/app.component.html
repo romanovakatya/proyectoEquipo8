@@ -1,29 +1,33 @@
 <div class="container">
-  <nav class="navbar navbar-expand navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Libro-Systems</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-        <ul class="navbar-nav mb-2 mb-lg-0 justify-content-between">
-          <li class="nav-item">
-            <a class="nav-link active" routerLink="/libros">Mis libros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/libros-encontrados" tabindex="-1" aria-disabled="true">Buscar libros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page" routerLink="/libros-prestados">Libros prestados</a>
-          </li>
-        </ul>
+
+    <nav class="navbar navbar-expand navbar-light bg-light">
+      <div class="container-fluid" *ngIf="isLoggedIn">
+        <a class="navbar-brand" routerLink="/home">Libro-Systems</a>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent" >
+          <a class="nav-link active" routerLink="/home">Home</a>
+          <ul class="navbar-nav mb-2 mb-lg-0 justify-content-between">
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="/libros">Mis libros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/libros-encontrados" tabindex="-1" aria-disabled="true">Buscar libros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" routerLink="/libros-prestados">Libros prestados</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+
+      <div class="container-fluid" *ngIf="!isLoggedIn">
+        <a class="navbar-brand" routerLink="/inicio">Libro-Systems</a>
+      </div>
+    </nav>
+
   <div>
     <router-outlet></router-outlet>
   </div>
+
 </div>
 
 

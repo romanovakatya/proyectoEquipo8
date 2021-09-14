@@ -1,0 +1,59 @@
+<div class="registrarse contenedorForm rounded shadow">
+  <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+
+    <div class="mb-3 divForm custom-medio-blue">
+      <!--el campo de username -->
+      <label for="username" class="form-label custom-medio-blue">Username</label>
+      <input type="text" class="form-control" id="username" name="username"
+             [(ngModel)]="form.username" required minlength="3" maxlength="20" #username="ngModel"/>
+
+      <div class="alert-danger text-center" *ngIf="username.errors && f.submitted">
+        <div *ngIf="username.errors.required">Username es obligatorio</div>
+        <div *ngIf="username.errors.minlength">
+          Username tiene que tener como mínimo 3 caracteres
+        </div>
+        <div *ngIf="username.errors.maxlength">
+          Username debe tener como máximo 20 caracteres
+        </div>
+      </div>
+    </div>
+
+    <!-- el campo de email -->
+    <div class="mb-3 divForm custom-medio-blue">
+      <label for="email" class="form-label custom-medio-blue">Introduce su email</label>
+      <input type="email" class="form-control" id="email" name="email"
+             [(ngModel)]="form.email" required email #email="ngModel"/>
+
+      <div class="alert-danger text-center" *ngIf="email.errors && f.submitted">
+        <div *ngIf="email.errors.required">Email es obligatorio</div>
+        <div *ngIf="email.errors.email">
+          Email debe ser una dirección de correo electrónico válida
+        </div>
+      </div>
+    </div>
+
+    <!--el campo de contraseña -->
+    <div class="mb-3 divForm">
+      <label for="password" class="form-label">Introduce una contraseña</label>
+      <input type="password" class="form-control" id="password" name="password"
+             [(ngModel)]="form.password" required minlength="4" #password="ngModel"/>
+
+      <div class="alert-danger text-center" *ngIf="password.errors && f.submitted">
+        <div *ngIf="password.errors.required">Contraseña es obligatoria</div>
+        <div *ngIf="password.errors.minlength">
+          La contraseña tiene que tener como mínimo 4 caracteres
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-custom-blue">Registrarse</button>
+
+    <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+      Registro fallido!<br />{{ errorMessage }}
+    </div>
+  </form>
+
+  <div class="alert alert-success" *ngIf="isSuccessful">
+    Has registrado exitosamente!
+  </div>
+</div>

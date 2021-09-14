@@ -1,0 +1,37 @@
+<div class="login contenedorForm rounded shadow">
+
+  <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+    <div class="mb-3 divForm"> <!--custom-orange -->
+      <label for="username" class="form-label">Username</label> <!--custom-orange -->
+      <input type="text" class="form-control" id="username" name = "username"
+             [(ngModel)]="form.username" required #username="ngModel"/>
+      <div class="alert alert-danger" role="alert" *ngIf="username.errors && f.submitted">
+        Username es obligatorio!
+      </div>
+    </div>
+
+    <div  class="mb-3 divForm"> <!--custom-orange -->
+      <label for="password" class="form-label ">Contraseña</label> <!--custom-orange -->
+      <input type="password" class="form-control" id="password" name = "password"
+             [(ngModel)]="form.password" required minlength="4" #password="ngModel"/>
+      <div class="alert alert-danger" role="alert" *ngIf="password.errors && f.submitted">
+        <div *ngIf="password.errors.required">Contraseña es obligatoria</div>
+        <div *ngIf="password.errors.minlength">
+          La contraseña tiene que tener como mínimo 4 caracteres
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-custom-orange pe-5 ps-5">Login</button>
+
+    <div class="form-group">
+      <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isLoginFailed">
+        Error de inicio de sesion: {{ errorMessage }}
+      </div>
+    </div>
+    </form>
+
+  <div class="alert alert-success" *ngIf="isLoggedIn">
+    Logged in as test.
+  </div>
+</div>
