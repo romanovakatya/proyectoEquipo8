@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import app.dto.EjemplarPresta;
+import app.dto.Usuario;
 import app.service.EjemplarPrestaServiceImpl;
+import app.service.UsuarioServiceImpl;
 
 
 @RestController
@@ -22,6 +24,9 @@ public class EjemplarPrestaController {
 
 	@Autowired
 	EjemplarPrestaServiceImpl ejemplarPrestaServiceImpl;
+	
+	@Autowired
+	UsuarioServiceImpl usuarioServiceImpl;
 	
 	@GetMapping("/ejemplaresPrestados")
 	public List<EjemplarPresta> listarEjemplaresPrestados() {
@@ -72,4 +77,17 @@ public class EjemplarPrestaController {
 
 		ejemplarPrestaServiceImpl.eliminarEjemplarPrestado(id);
 	}
+	
+	@GetMapping("/ejemplaresPrestados/usuario/{usuario}")
+	public List<EjemplarPresta> ejemplarPrestadoXUsuario(@PathVariable(name = "usuario") Long usuario) {
+
+		Usuario usuario_final = new Usuario();
+		
+		usuario_final=usuarioServiceImpl.usuarioXID(usuario);
+		
+		return ejemplarPrestaServiceImpl.ejemplarPrestadoXUsuario(usuario_final);
+	}
+	
+	
+	
 }
