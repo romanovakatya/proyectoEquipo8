@@ -51,6 +51,9 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 			// Finalmente autenticamos
 	        // Spring comparará el user/password recibidos
 	        // contra el que definimos en la clase SecurityConfig
+			//System.out.println("test 1");
+			
+			
 			return authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
 					credenciales.getUsername(), credenciales.getContrasena(), new ArrayList<>()));
 		} 
@@ -77,5 +80,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
 		// agregamos al encabezado el token,
 		response.addHeader(HEADER_AUTHORIZACION_KEY, TOKEN_BEARER_PREFIX + " " + token);
+		
+		//System.out.println(TOKEN_BEARER_PREFIX + " " + token);
 	}
 }
