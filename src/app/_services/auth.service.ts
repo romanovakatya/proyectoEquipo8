@@ -19,6 +19,7 @@ export class AuthService {
 
   //para loguearse a nuestra API con su usuario y password
   login(username: string, password: string): Observable<any> {
+    console.log('login');
     return this.http.post(AUTH_API + 'login', {
      'username': username,
      'contrasena': password
@@ -26,7 +27,7 @@ export class AuthService {
   }
 
   //para poder registrarse a la app,
-  //cualquiera persona puede hacerlo porque app funciona dentro de la intranet,
+  //cualquiera persona puede hacerlo porque app funciona dentro de la intranet,/*api/*/
   register(username: string, email: string, password: string): Observable<any> {
     return this.http.post(AUTH_API + 'api/usuarios', {
       'contrasena': password,

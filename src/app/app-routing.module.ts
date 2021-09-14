@@ -72,7 +72,9 @@ const routes: Routes = [
   },
   {
     path: 'contacts/:id', component: ContactoComponent
-  }
+  },
+  {path: '**', redirectTo: 'home', pathMatch: 'full'}
+
 ];
 
 @NgModule({
