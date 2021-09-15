@@ -4,38 +4,32 @@
 </div>
 <div>
   <!--<button class="btn btn-custom-blue">Logout</button>(click)="cerrarSesion()"-->
-  <div class="crear-editorial pt-2 pb-2">
+  <div class="crear-editorial pt-2 pb-2" *ngIf="submitted==false">
     <div><!--*ngIf="!submitted"-->
       <h2>Crear Editorial</h2>
       <div class="mb-3">
         <label for="nombre" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="nombre" name="nombre"/>
-        <!--required [(ngModel)] = "Editorial.nombre"-->
+        <input type="text" class="form-control" id="nombre" name="nombre" required [(ngModel)]="currentEditorial.nombre"/>
       </div>
 
       <div class="mb-3">
         <label for="direccion" class="form-label">Direccion</label>
-        <input type="text" class="form-control" id="direccion" name="direccion"/>
-        <!--[(ngModel)] = "Editorial.direccion"-->
+        <input type="text" class="form-control" id="direccion" name="direccion" required [(ngModel)]="currentEditorial.direccion"/>
       </div>
 
       <div class="mb-3">
         <label for="pagina_web" class="form-label">Pagina Web</label>
-        <input type="text" class="form-control" id="pagina_web" name="pagina_web"/>
-        <!--[(ngModel)] = "Editorial.pagina_web"-->
+        <input type="text" class="form-control" id="pagina_web" name="pagina_web" required [(ngModel)]="currentEditorial.pagina_web"/>
       </div>
 
-      <button class="btn btn-custom-orange pe-5 ps-5">Crear</button> <!--(click)="guardarEditorial()"-->
+      <button class="btn btn-custom-orange pe-5 ps-5" (click)="crearEditorial()">Crear</button> <!--(click)="guardarEditorial()"-->
     </div>
   </div>
 </div>
-<!--
+
 <div *ngIf="submitted">
   <h4>Editorial Creada Correctamente</h4>
-  <button class="btn btn-success" (click)="nuevaEditorial()">Crear Editorial</button>
-  <button class="btn btn-success" routerLink >Volver</button> routerLink a inicio
+  <button class="btn btn-custom-orange" (click)="nuevaEditorial()">Crear Editorial</button>
 </div>
-</div>
-</div>
--->
+
 
