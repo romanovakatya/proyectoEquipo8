@@ -14,6 +14,7 @@ export class TokenStorageService {
 
   signOut(): void {
     window.sessionStorage.clear();
+    console.log('hola');
   }
 
   saveToken(token: any): void {
