@@ -10,20 +10,20 @@
 
       <div class="mb-3">
         <label for="nombre" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="nombre" name = "nombre" value="Nombre Editorial"/>
+        <input type="text" class="form-control" id="nombre" name = "nombre" value="{{editorial.nombre}}" [(ngModel)]="editorial.nombre"/>
       </div>
 
       <div  class="mb-3">
         <label for="direccion" class="form-label">Direccion</label>
-        <input type="text" class="form-control" id="direccion" name = "direccion" value="Direccion Editorial"/>
+        <input type="text" class="form-control" id="direccion" name = "direccion" value="{{editorial.direccion}}" [(ngModel)]="editorial.direccion"/>
       </div>
 
       <div  class="mb-3">
         <label for="pagina_web" class="form-label">Pagina Web</label>
-        <input type="text" class="form-control" id="pagina_web" name = "pagina_web" value="Pagina Web Editorial"/>
+        <input type="text" class="form-control" id="pagina_web" name = "pagina_web" value="{{editorial.pagina_web}}" [(ngModel)]="editorial.pagina_web"/>
       </div>
 
-      <button class="btn btn-custom-orange">Actualizar</button>
+      <button class="btn btn-custom-orange" (click)="updateEditorial()">Actualizar</button>
   </div>
 </div>
 
