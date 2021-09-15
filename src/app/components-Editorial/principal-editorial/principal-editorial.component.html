@@ -7,21 +7,25 @@
 <div class="principal">
   <div class="input-group rounded">
     <input type="search" class="form-control rounded" placeholder="Buscar por Nombre" aria-label="Search"
-           aria-describedby="search-addon"/><!--[(ngModel)]="nombre"-->
-    <button class="btn btn-outline-secondary" type="button">Buscar</button><!--(click)="buscarEditorial()"-->
+           aria-describedby="search-addon" [(ngModel)]="nombre"/>
+    <button class="btn btn-outline-secondary" type="button" (click)="getEditorialByName()">Buscar</button>
   </div>
-  <div class="editoriales "><!--ngfor editoriales-->
+
+  <div class="editoriales" *ngFor="let editorial of editoriales">
     <div class="row bg-white align-items-center justify-content-between rounded">
       <div class="col fw-bold">
-        Nombre Editorial
+        {{editorial.nombre}}
       </div>
       <div class="col">
         <button class="btn btn-custom-orange pe-4 ps-4">Elegir</button>
-        <button class="btn btn-custom-light-blue" routerLink="/editoriales/1">Mostrar</button><!-- routerLink a Mostrar Editorial-->
+
+        <button class="btn btn-custom-light-blue" routerLink="/editoriales/{{editorial.id}}">Mostrar</button>
+
       </div>
     </div>
   </div>
-</div>
+
+
 <!--<div>
   <button routerLink="/addLibro" class="btn btn-custom-dark-blue pe-5 ps-5">Back</button> puede ser no la vamos a usar
 </div>
