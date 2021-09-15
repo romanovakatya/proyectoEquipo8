@@ -1,9 +1,18 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Editorial } from '../models/editorial.model';
 
 const baseUrl = 'https://libro-systems.herokuapp.com/api/editoriales';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    //'Content-Type':  'application/json',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'PUT',
+    'Access-Control-Allow-Origin': '*'
+  })
+}
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +38,7 @@ export class EditorialService {
   }
 
   update(id: any, data: any): Observable<any> {
-    return this.http.put(`${baseUrl}/${id}`, data);
+    return this.http.put(`${baseUrl}/${id}`, data, httpOptions);
   }
 
   delete(id: any): Observable<any> {
