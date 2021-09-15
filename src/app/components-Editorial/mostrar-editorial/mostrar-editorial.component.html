@@ -6,25 +6,25 @@
   <!--<button class="btn btn-custom-blue">Logout</button>(click)="cerrarSesion()"-->
   <div class="mostrar-editorial pt-2 pb-2">
 
-    <h2>Nombre Editorial</h2> <!-- Esto no esta en el prototipado de vistas -->
+    <h2>{{editorial.nombre}}</h2> <!-- Esto no esta en el prototipado de vistas -->
 
       <div class="mb-3">
-        <input type="text" class="form-control bg-white" id="id" name = "id" readonly="readonly" value="ID Editorial"/>
+        <input type="text" class="form-control bg-white" id="id" name = "id" readonly="readonly" value="{{editorial.id}}"/>
       </div>
 
       <div class="mb-3">
-        <input type="text" class="form-control bg-white" id="nombre" name = "nombre" readonly="readonly" value="Nombre Editorial"/>
+        <input type="text" class="form-control bg-white" id="nombre" name = "nombre" readonly="readonly" value="{{editorial.nombre}}"/>
       </div>
 
       <div  class="mb-3">
-        <input type="text" class="form-control bg-white" id="direccion" name = "direccion" readonly="readonly" value="Direccion Editorial"/>
+        <input type="text" class="form-control bg-white" id="direccion" name = "direccion" readonly="readonly" value="{{editorial.direccion}}"/>
       </div>
 
       <div  class="mb-3">
-        <input type="text" class="form-control bg-white" id="pagina_web" name = "pagina_web" readonly="readonly" value="Pagina Web Editorial"/>
+        <input type="text" class="form-control bg-white" id="pagina_web" name = "pagina_web" readonly="readonly" value="{{editorial.pagina_web}}"/>
       </div>
 
       <button class="btn btn-custom-orange pe-3 ps-3">¿Elegir?</button>
-      <button class="btn btn-custom-bone" routerLink="/editoriales/actualizar/1">Actualizar</button><!-- routerLink a Actualizar Editorial-->
+      <button class="btn btn-custom-bone" routerLink="/editoriales/actualizar/{{editorial.id}}">Actualizar</button>
   </div>
 </div>
