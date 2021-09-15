@@ -1,7 +1,7 @@
 <div class="login contenedorForm rounded shadow">
 
   <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
-    <div class="mb-3 divForm"> <!--custom-orange -->
+    <div class="mb-3 divForm align-items-center"> <!--custom-orange -->
       <label for="username" class="form-label">Username</label> <!--custom-orange -->
       <input type="text" class="form-control" id="username" name = "username"
              [(ngModel)]="form.username" required #username="ngModel"/>
@@ -32,6 +32,6 @@
     </form>
 
   <div class="alert alert-success" *ngIf="isLoggedIn">
-    Logged in as test.
+    Conectado como {{form.username}}.
   </div>
 </div>
