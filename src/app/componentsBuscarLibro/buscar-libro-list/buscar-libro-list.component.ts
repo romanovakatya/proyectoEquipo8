@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {Ejemplar} from "../../models/ejemplar.model";
+import {EjemplarService} from "../../services/ejemplar.service";
+import {LibroService} from "../../services/libro.service";
+import {Libro} from "../../models/libro.model";
+
 
 @Component({
   selector: 'app-buscar-libro-list',
@@ -7,9 +12,56 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuscarLibroListComponent implements OnInit {
 
-  constructor() { }
+  ejemplares?: Ejemplar[];
+
+  currentEjemplar: Ejemplar = {};
+  currentIndex = -1;
+  isbn = '';
+
+  constructor(private ejemplarService: EjemplarService) { }
 
   ngOnInit(): void {
+
+    this.retrieveEjemplares();
   }
 
+  retrieveEjemplares(): void {
+    this.ejemplarService.getAll()
+      .subscribe(
+        data => {
+          this.ejemplares = data;
+          console.log(data);
+        },
+        error => {
+          console.log(error);
+        }
+      );
+  }
+
+  refreshList(): void {
+    this.retrieveEjemplares();
+    this.currentEjemplar = {};
+    this.currentIndex = -1;
+  }
+
+  setActiveEjemplar(ejemplar: Ejemplar, index: number): void {
+    this.currentEjemplar = ejemplar;
+    this.currentIndex = index;
+  }
+
+  searchIsbn(): void {
+    this.currentEjemplar = {};
+    this.currentIndex = -1;
+
+    this.ejemplarService.findByISBN(this.isbn)
+      .subscribe(
+        data => {
+          this.ejemplares = data;
+          console.log(data);
+        },
+        error => {
+          console.log(error);
+        }
+      );
+  }
 }

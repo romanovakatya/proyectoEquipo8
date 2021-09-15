@@ -4,35 +4,44 @@
     <app-logout></app-logout>
   </div>
 
-  <div class="card m-auto" style="width: 30rem;"> <!--*ngIf="character!=null; else espera"-->
-    <img src="https://i.blogs.es/6a6119/senoranillos/450_1000.jpeg"
+  <div class="card m-auto" style="width: 30rem;" *ngIf="currentEjemplar!=null; else espera">
+    <img src="{{currentEjemplar.portada}}"
          class="card-img-top w-50 align-self-center mt-4" alt="portada">
     <div class="card-body">
       <table class="table">
         <tbody>
         <tr>
+          <th scope="row" class="text-end">Estatus </th>
+          <td class="text-start" *ngIf="!currentEjemplar.statusLibre">
+            <button class="btn btn-custom-red me-2 text-custom-red btn-xs">bg</button>
+          </td>
+          <td class="text-start" *ngIf="currentEjemplar.statusLibre">
+            <button class="btn btn-custom-green me-2 text-custom-green btn-xs">bg</button>
+          </td>
+        </tr>
+        <tr>
           <th scope="row" class="text-end">Autor </th>
-          <td class="text-start">J. R. R. Tolkien</td>
+          <td class="text-start">{{currentEjemplar.libro.autor}}</td>
         </tr>
         <tr>
           <th scope="row" class="text-end">Título</th>
-          <td class="text-start">El señor de los anillos</td>
+          <td class="text-start">{{currentEjemplar.libro.titulo}}</td>
         </tr>
         <tr>
           <th scope="row" class="text-end">Número páginas</th>
-          <td class="text-start">423</td>
+          <td class="text-start">{{currentEjemplar.numeroPaginas}}</td>
         </tr>
         <tr>
           <th scope="row" class="text-end">ISBN</th>
-          <td class="text-start">9-7368-1974-3</td>
+          <td class="text-start">{{currentEjemplar.isbn}}</td>
         </tr>
         <tr>
           <th scope="row" class="text-end">Editorial</th>
-          <td class="text-start">Grupo Santillana</td>
+          <td class="text-start">{{currentEjemplar.libro.editorial.nombre}}</td>
         </tr>
         <tr>
           <th scope="row" class="text-end">Descripción</th>
-          <td class="text-start">El Señor de los Anillos es una novela de fantasía épica escrita por el filólogo y escritor británico J. R. R. Tolkien</td>
+          <td class="text-start">{{currentEjemplar.libro.descripcion}}</td>
         </tr>
         </tbody>
       </table>
@@ -40,10 +49,10 @@
 
     <div class="d-flex justify-content-center align-items-center mb-4">
       <button routerLink="/contacts/1" class="btn btn-custom-light-blue">Mostrar Propietario</button>
-      <button class="btn btn-custom-light-brown ms-3 ps-5 pe-5">Leer</button>
+      <button class="btn btn-custom-light-brown ms-3 ps-5 pe-5" (click)="leer()">Leer</button>
     </div>
   </div>
 
-  <!--<ng-template #espera> Esperando datos...</ng-template>-->
+  <ng-template #espera> Esperando datos...</ng-template>
 </div>
 

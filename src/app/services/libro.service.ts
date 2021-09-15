@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Libro } from '../models/libro.model';
-import { Editorial } from '../models/editorial.model';
 
-const baseUrl = 'https://libro-systems.herokuapp.com/api/libros';
+
+//const baseUrl = 'https://libro-systems.herokuapp.com/api/libros';
+const baseUrl = 'http://localhost:8181/api/libros';
 
 @Injectable({
   providedIn: 'root'
@@ -17,15 +18,15 @@ export class LibroService {
     return this.http.get<Libro[]>(baseUrl);
   }
 
-  getID(id: any): Observable<Editorial> {
+  getID(id: any): Observable<Libro> {
     return this.http.get(`${baseUrl}/${id}`);
   }
 
-  getAutor(autor: any): Observable<Editorial> {
+  getAutor(autor: any): Observable<Libro> {
     return this.http.get(`${baseUrl}/autor/${autor}`);
   }
 
-  getTitulo(titulo: any): Observable<Editorial> {
+  getTitulo(titulo: any): Observable<Libro> {
     return this.http.get(`${baseUrl}/titulo/${titulo}`);
   }
 

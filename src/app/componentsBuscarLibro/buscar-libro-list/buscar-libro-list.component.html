@@ -7,9 +7,10 @@
         </div>
         <div class="col-md-7">
           <div class="input-group shadow-sm rounded">
-            <input class="form-control" type="search" placeholder="Buscar por el título, autor o ISBN"
-                   aria-label="Search">
-            <button class="btn btn-outline-custom-light-brown" type="submit">Buscar</button>
+            <input class="form-control" type="text" placeholder="Buscar por el título, autor o ISBN"
+                   aria-label="Search" [(ngModel)]="isbn" />
+            <button class="btn btn-outline-custom-light-brown" type="submit"
+            (click)="searchIsbn()">Buscar</button>
           </div>
         </div>
         <div class="col-auto">
@@ -21,40 +22,16 @@
   </nav>
 
   <div class="container">
-    <div class="row mt-4"> <!--*ngIf="librosEncontrados!=null; else espera"-->
-      <div class="col"><!--*ngFor="let libroEncontrado of librosEncontrados.results"-->
-        <div class="card mb-3 ms-5 shadow rounded" style="width: 15rem;">
-          <img src="https://i0.wp.com/hipertextual.com/wp-content/uploads/2017/06/harry-potter-varita.jpg?fit=1920%2C1080&ssl=1" class="card-img-top" alt="character">
-          <div class="card-body text-center">
-            <p class="card-text text-wrap fw-bold">Harry Potter y la Piedra Filosofal</p>
-            <span>
-            <button class="btn btn-custom-light-blue" routerLink="/libros-encontrados/2">Mostrar</button>
-            <button class="btn btn-custom-light-brown ms-2 pe-4 ps-4">Leer</button>
-          </span>
-          </div>
-        </div>
-      </div>
+    <div class="row mt-4" *ngIf="ejemplares!=null; else espera">
+      <div class="col" *ngFor="let ejemplar of ejemplares;
+        let i = index" [class.active]="i == currentIndex" (click)="setActiveEjemplar(ejemplar, i)">
 
-      <div class="col"><!--*ngFor="let character of characters.results"-->
         <div class="card mb-3 ms-5 shadow rounded" style="width: 15rem;">
-          <img src="https://lasletrasdecasiopea.files.wordpress.com/2016/12/la-larga-marcha.png" class="card-img-top" alt="character">
+          <img src="{{ejemplar.portada}}" class="card-img-top" alt="libro">
           <div class="card-body text-center">
-            <p class="card-text text-wrap fw-bold">La larga marcha</p>
+            <p class="card-text text-wrap fw-bold">{{ejemplar.libro.titulo}}</p>
             <span>
-            <button class="btn btn-custom-light-blue" routerLink="/libros-encontrados/2">Mostrar</button>
-            <button class="btn btn-custom-light-brown ms-2 pe-4 ps-4">Leer</button>
-          </span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col"><!--*ngFor="let character of characters.results"-->
-        <div class="card mb-3 ms-5 shadow rounded" style="width: 15rem;">
-          <img src="https://i.blogs.es/6a6119/senoranillos/450_1000.jpeg" class="card-img-top" alt="character">
-          <div class="card-body text-center">
-            <p class="card-text text-wrap fw-bold">El señor de los anillos</p>
-            <span>
-            <button class="btn btn-custom-light-blue" routerLink="/libros-encontrados/2">Mostrar</button>
+            <button class="btn btn-custom-light-blue" routerLink="/libros-encontrados/{{ejemplar.id}}">Mostrar</button>
             <button class="btn btn-custom-light-brown ms-2 pe-4 ps-4">Leer</button>
           </span>
           </div>
@@ -62,6 +39,6 @@
       </div>
     </div>
   </div>
-  <!-- <ng-template #espera> Esperando datos...</ng-template>-->
+ <ng-template #espera> Esperando datos...</ng-template>-
 </div>
 
