@@ -82,10 +82,14 @@ public class UsuarioController {
 		return usuario_actualizado;
 	}
 	
+	@GetMapping("/usuarios/username/{username}")
+	public Usuario ejemplarPrestadoXUsuario(@PathVariable(name = "username") String username) {
+	
+		return usuarioServImpl.listarUsuarioUsername(username);
+	}
+	
 	@DeleteMapping("/usuarios/{id}")
 	public void eliminarUsuario(@PathVariable(name="id")Long id) {
 		usuarioServImpl.eliminarUsuario(id);
 	}
-
-	
 }
