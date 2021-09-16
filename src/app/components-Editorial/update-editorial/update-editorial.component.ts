@@ -16,20 +16,21 @@ export class UpdateEditorialComponent implements OnInit {
     pagina_web:''
   }
 
-  id:any=0;
+  id: number = -1;
 
   editorial:any=null;
 
   constructor(private editorialService: EditorialService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getEditorial();
+    this.id = this.route.snapshot.params.id;
+    this.getEditorial(this.id);
   }
 
-  getEditorial(){
-    this.id=this.route.snapshot.paramMap.get("id");
+  getEditorial(id: number){
 
-    this.editorialService.getID(this.id)
+
+    this.editorialService.getID(id)
     .subscribe(
       result =>{
         this.editorial = result;
@@ -37,14 +38,13 @@ export class UpdateEditorialComponent implements OnInit {
       },
       error =>{
         console.log("Problemas");
+        console.log(error)
       }
       );
   }
 
   updateEditorial(){
-    this.id=this.route.snapshot.paramMap.get("id");
-
-    this.editorialService.update(this.id,this.currentEditorial)
+    this.editorialService.update(this.id, this.currentEditorial)
     .subscribe(
       response => {
         console.log(response);

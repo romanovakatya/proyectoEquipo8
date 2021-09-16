@@ -10,8 +10,8 @@
         <div class="col-md-7 me-2">
           <div class="input-group shadow-sm rounded">
             <input class="form-control" type="search" placeholder="Buscar por el título, autor o ISBN"
-                   aria-label="Search">
-            <button class="btn btn-outline-custom-light-brown" type="submit">Buscar</button>
+                   aria-label="Search" [(ngModel)]="isbn">
+            <button class="btn btn-outline-custom-light-brown" type="submit" (click)="searchIsbn()">Buscar</button>
           </div>
         </div>
         <app-logout></app-logout>
@@ -21,43 +21,28 @@
 
   <div class="list row justify-content-center mt-4">
     <div class="col-md-7 ms-3">
-      <ul class="list-group">
+      <ul class="list-group" *ngIf="misLibros!=null; else espera">
         <li class="list-group-item d-flex justify-content-between align-items-center mt-2 mb-2 pt-3 pb-3
-        shadow-sm bg-body rounded">
+        shadow-sm bg-body rounded" *ngFor="let miLibro of misLibros">
           <span class="text-wrap fw-bold">
-          <button class="btn btn-custom-red me-2 text-custom-red btn-xs">bg</button>
-            Harry Potter y la Piedra Filosofal
+            <span *ngIf="!miLibro.statusLibre ; else elseBlock">
+              <button class="btn btn-custom-red me-2 text-custom-red btn-xs">bg</button>
+            </span>
+           <ng-template #elseBlock>
+             <span>
+              <button class="btn btn-custom-green me-2 text-custom-green btn-xs">bg</button>
+            </span>
+              </ng-template>
+            {{miLibro.libro.titulo}}
           </span>
-          <span>
-            <button class="btn btn-custom-light-blue pe-3 ps-3" routerLink="/libros/1">Mostrar</button>
-            <button class="btn btn-custom-orange ms-2 pe-3 ps-3">Eliminar</button>
-          </span>
-        </li>
 
-        <li class="list-group-item d-flex justify-content-between align-items-center mt-2 mb-2 pt-3 pb-3
-            shadow-sm bg-body rounded">
-          <span class="text-wrap fw-bold">
-          <button class="btn btn-custom-green me-2 text-custom-green btn-xs" >bg</button>
-            La larga marcha
-          </span>
           <span>
-            <button class="btn btn-custom-light-blue pe-3 ps-3">Mostrar</button>
-            <button class="btn btn-custom-orange ms-2 pe-3 ps-3">Eliminar</button>
-          </span>
-        </li>
-
-        <li class="list-group-item d-flex justify-content-between align-items-center mt-2 mb-2 pt-3 pb-3
-            shadow-sm bg-body rounded">
-          <span class="text-wrap fw-bold">
-            <button class="btn btn-custom-red me-2 text-custom-red btn-xs">bg</button>
-            El señor de los anillos
-          </span>
-          <span>
-            <button class="btn btn-custom-light-blue pe-3 ps-3">Mostrar</button>
+            <button class="btn btn-custom-light-blue pe-3 ps-3" routerLink="/libros/{{miLibro.id}}">Mostrar</button>
             <button class="btn btn-custom-orange ms-2 pe-3 ps-3">Eliminar</button>
           </span>
         </li>
       </ul>
+      <ng-template #espera> Esperando datos...</ng-template>
     </div>
   </div>
 </div>

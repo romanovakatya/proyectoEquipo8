@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {EjemplarService} from "../../services/ejemplar.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Ejemplar} from "../../models/ejemplar.model";
@@ -27,7 +27,8 @@ export class BuscarLibroDetailsComponent implements OnInit {
     private ejemplarService: EjemplarService,
     private route: ActivatedRoute,
     private router: Router
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;
@@ -49,8 +50,8 @@ export class BuscarLibroDetailsComponent implements OnInit {
       );
   }
 
-  leer(){
-console.log('kyky')
+  leer() {
+    console.log('kyky')
     this.ejemplarService.update(this.id,
       {
         isbn: this.currentEjemplar.isbn,
@@ -63,5 +64,4 @@ console.log('kyky')
 
     this.getEjemplar(this.id);
   }
-
 }

@@ -1,48 +1,48 @@
 <div class="container mt-5">
-  <div class="d-flex justify-content-between align-items-center">
-    <button routerLink="/libros/1" class="btn btn-custom-dark-blue pe-5 ps-5">Back</button>
+  <div class="d-flex justify-content-between align-items-center" *ngIf="currentLibro.id">
+    <button routerLink="/libros/{{currentLibro.id}}" class="btn btn-custom-dark-blue pe-5 ps-5">Back</button>
     <app-logout></app-logout>
   </div>
-  <div class="card m-auto bg-blue shadow bg-body rounded" style="width: 35rem;"> <!--*ngIf="character!=null; else espera"-->
+  <div class="card m-auto bg-blue shadow bg-body rounded" style="width: 35rem;">
     <div class="card-body">
-      <h4 class="card-title text-center">Actualizar libro</h4>
+      <h4 class="card-title text-center">Actualizar ejemplar</h4>
       <table class="table">
         <tbody>
         <tr>
           <th scope="row" class="text-end">Autor</th>
           <td class="text-start">
-            <input type="text" id="inputAutor" class="form-control" aria-describedby="Autor" value="J.K. Rowling"/>
+            <input type="text" id="inputAutor" class="form-control" aria-describedby="Autor" [(ngModel)]="currentLibro.libro.autor"/>
           </td>
         </tr>
         <tr>
           <th scope="row" class="text-end">Título</th>
           <td class="text-start">
-            <input type="text" id="inputTitulo" class="form-control" value="Harry Potter y la Piedra Filosofal"/>
+            <input type="text" id="inputTitulo" class="form-control"  [(ngModel)]="currentLibro.libro.titulo"/>
           </td>
         </tr>
         <tr>
           <th scope="row" class="text-end">Número páginas</th>
           <td class="text-start">
-            <input type="text" id="inputPaginas" class="form-control" value="256"/>
+            <input type="text" id="inputPaginas" class="form-control" [(ngModel)]="currentLibro.numeroPaginas"/>
           </td>
         </tr>
         <tr>
           <th scope="row" class="text-end">ISBN</th>
           <td class="text-start">
-            <input type="text" id="inputIsbn" class="form-control" value="2-7895-1235-4"/>
+            <input type="text" id="inputIsbn" class="form-control" [(ngModel)]="currentLibro.isbn"/>
           </td>
         </tr>
         <tr>
           <th scope="row" class="text-end">Editorial</th>
           <td class="text-start input-group">
-            <input type="text" id="inputEditorial" class="form-control" value="Ediciones Europa" />
+            <input type="text" id="inputEditorial" class="form-control" [(ngModel)]="currentLibro.libro.editorial.nombre" />
             <button class="btn btn-custom-medio-blue" routerLink="/editoriales">Elegir Editorial</button>
           </td>
         </tr>
         <tr>
           <th scope="row" class="text-end">Descripción</th>
           <td class="text-start">
-            <textarea class="form-control" id="description" rows="4">Es el primer volumen de la ya clásica serie de novelas fantásticas de la autora británica J.K. Rowling.
+            <textarea class="form-control" id="description" rows="4" [(ngModel)]="currentLibro.libro.descripcion">
             </textarea>
           </td>
         </tr>
@@ -50,12 +50,16 @@
       </table>
     </div>
     <div class="align-self-center mb-4">
-      <button class="btn btn-custom-orange pe-5 ps-5">Guardar</button> <!--(click)="saveBook()" -->
+      <button class="btn btn-custom-orange pe-5 ps-5" (click)="updateLibro()">Guardar</button>
+      <p>{{ message }}</p>
+    </div>
+
+    <div *ngIf="!currentLibro.id">
+      <br/>
+      <p>no se puede acceder a ese ejemplar...</p>
     </div>
 
   </div>
 
-
-  <!--<ng-template #espera> Esperando datos...</ng-template>-->
 </div>
 

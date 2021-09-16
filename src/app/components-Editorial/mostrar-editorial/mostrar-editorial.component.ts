@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { EditorialService } from 'src/app/services/editorial.service';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {EditorialService} from 'src/app/services/editorial.service';
+import {Editorial} from "../../models/editorial.model";
 
 @Component({
   selector: 'app-mostrar-editorial',
@@ -9,28 +10,34 @@ import { EditorialService } from 'src/app/services/editorial.service';
 })
 export class MostrarEditorialComponent implements OnInit {
 
-  id:any=0;
+  id: number = -1;
 
-  editorial:any=null;
+  editorial: Editorial = {
+    nombre: '',
+    direccion: '',
+    pagina_web: ''
+  };
 
-  constructor(private editorialService: EditorialService,private route: ActivatedRoute) { }
-
-  ngOnInit(): void {
-    this.getEditorial();
+  constructor(private editorialService: EditorialService, private route: ActivatedRoute) {
   }
 
-  getEditorial(){
-    this.id=this.route.snapshot.paramMap.get("id");
+  ngOnInit(): void {
+    this.id = this.route.snapshot.params.id;
+    this.getEditorial(this.id);
+  }
 
-    this.editorialService.getID(this.id)
-    .subscribe(
-      result =>{
-        this.editorial = result;
-        console.log(this.editorial);
-      },
-      error =>{
-        console.log("Problemas");
-      }
+  getEditorial(id: number) {
+
+    this.editorialService.getID(id)
+      .subscribe(
+        result => {
+          this.editorial = result;
+          console.log(this.editorial);
+        },
+        error => {
+          console.log("Problemas");
+          console.log(error);
+        }
       );
   }
 

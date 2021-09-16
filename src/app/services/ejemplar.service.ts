@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Ejemplar} from "../models/ejemplar.model";
 
+
 //const baseUrl = 'https://libro-systems.herokuapp.com/api/ejemplares';
 const baseUrl = 'http://localhost:8181/api/ejemplares';
 
@@ -23,6 +24,14 @@ export class EjemplarService {
 
   findByISBN(isbn: any): Observable<Ejemplar[]> {
     return this.http.get<Ejemplar[]>(`${baseUrl}/isbn/${isbn}`);
+  }
+
+  findByStatusLibre(statuslibre: any): Observable<Ejemplar[]> {
+    return this.http.get<Ejemplar[]>(`${baseUrl}/statuslibre/${statuslibre}`);
+  }
+
+  findByUsername(username: any): Observable<Ejemplar[]> {
+    return this.http.get<Ejemplar[]>(`${baseUrl}/propietario/${username}`);
   }
 
   create(data: any): Observable<any> {
