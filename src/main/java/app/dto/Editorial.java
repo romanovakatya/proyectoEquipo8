@@ -13,10 +13,13 @@ public class Editorial {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // busca ultimo valor e incrementa desde id final de db
 	private Long id;
+	
 	@Column(name = "nombre") // no hace falta si se llama igual
 	private String nombre;
+	
 	@Column(name = "direccion") // no hace falta si se llama igual
 	private String direccion;
+	
 	@Column(name = "pagina_web") // no hace falta si se llama igual
 	private String pagina_web;
 

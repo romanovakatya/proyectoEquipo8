@@ -50,4 +50,16 @@ public class EjemplarServiceImpl implements IEjemplarService{
 		iEjemplarDAO.deleteById(id);
 	}
 
+	@Override
+	public List<Ejemplar> listarEjemplaresStatusLibre(boolean statusLibre) {
+		
+		return iEjemplarDAO.findByStatusLibre(statusLibre);
+	}
+
+	@Override
+	public List<Ejemplar> listarEjemplaresUsername(String username) {
+		
+		return iEjemplarDAO.findByPropietarioUsername(username);
+	}
+
 }

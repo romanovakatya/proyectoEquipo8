@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import app.dto.Editorial;
+
 import app.service.EditorialServiceImpl;
 
 @RestController
@@ -26,16 +27,27 @@ public class ControllerEditorial {
 		return editorialServiceImpl.guardarEditorial(editorial);
 	}
 	
-	@GetMapping("/editoriales/{id}")
-	public Editorial listarXID(@PathVariable(name="id") Long id){
-		return editorialServiceImpl.editorialXID(id);
-	}
 	
 	@GetMapping("/editoriales/nombre/{nombre}")
-	public Editorial listarXNombre(@PathVariable(name="nombre") String nombre){
+	public List<Editorial> listarXNombre(@PathVariable(name="nombre") String nombre){
 
 		return editorialServiceImpl.editorialXNombre(nombre);
 	}
+	
+	
+	@GetMapping("/editoriales/{id}")
+	public Editorial listarXID(@PathVariable(name="id") Long id){
+		
+		Editorial editorial_xid = new Editorial();
+
+		editorial_xid = editorialServiceImpl.editorialXID(id);
+
+		System.out.println("editorial_xid: " + editorial_xid);
+
+		return editorial_xid;
+		
+	}
+	
 	
 	//Actualizar
 	@PutMapping("/editoriales/{id}")

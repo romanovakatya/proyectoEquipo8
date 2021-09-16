@@ -40,6 +40,18 @@ public class EjemplarController {
 
 		return ejemplarServiceImpl.listarEjemplarIsbn(isbn);
 	}
+	
+	@GetMapping("/ejemplares/statuslibre/{statuslibre}")
+	public List<Ejemplar> listarEjemplaresStatusLibre(@PathVariable(name = "statuslibre") boolean statusLibre) {
+
+		return ejemplarServiceImpl.listarEjemplaresStatusLibre(statusLibre);
+	}
+	
+	@GetMapping("/ejemplares/propietario/{propietariousername}")
+	public List<Ejemplar> listarEjemplaresUsername(@PathVariable(name = "propietariousername") String propietariousername) {
+
+		return ejemplarServiceImpl.listarEjemplaresUsername(propietariousername);
+	}
 
 	@GetMapping("/ejemplares/{id}")
 	public Ejemplar ejemplarXID(@PathVariable(name = "id") long id) {

@@ -45,7 +45,7 @@ public class EditorialServiceImpl implements IEditorialService {
 	}
 
 	@Override
-	public Editorial editorialXNombre(String nombre) {
+	public List<Editorial> editorialXNombre(String nombre) {
 	
 		return iEditorialDAO.findByNombre(nombre);
 	}

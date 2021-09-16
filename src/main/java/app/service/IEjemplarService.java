@@ -12,6 +12,10 @@ public interface IEjemplarService {
 	public Ejemplar guardarEjemplar(Ejemplar ejemplar);// Guarda un Ejemplar de libro CREATE
 
 	public List<Ejemplar> listarEjemplarIsbn(String isbn);// Listar ejemplares por campo isbn
+	
+	public List<Ejemplar> listarEjemplaresStatusLibre(boolean statusLibre);// Listar ejemplares por campo status libre
+	
+	public List<Ejemplar> listarEjemplaresUsername(String username);// Listar ejemplares por username del propietario
 
 	public Ejemplar ejemplarXID(long id); // Leer datos de un Ejemplar READ
 
