@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Ejemplar} from "../../models/ejemplar.model";
 import {EjemplarService} from "../../services/ejemplar.service";
-import {LibroService} from "../../services/libro.service";
-import {Libro} from "../../models/libro.model";
 
 
 @Component({
@@ -26,7 +24,8 @@ export class BuscarLibroListComponent implements OnInit {
   }
 
   retrieveEjemplares(): void {
-    this.ejemplarService.getAll()
+
+    this.ejemplarService.findByStatusLibre(true)
       .subscribe(
         data => {
           this.ejemplares = data;

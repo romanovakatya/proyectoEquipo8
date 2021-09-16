@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
         <div class="navbar-nav mb-2 mb-lg-0">
-          <h4 class="text-brown display-6"><em>Elegir un libro</em></h4>
+          <h4 class="text-brown display-6"><em>Elegir un ejemplar</em></h4>
         </div>
         <div class="col-md-7">
           <div class="input-group shadow-sm rounded">
@@ -27,7 +27,7 @@
         let i = index" [class.active]="i == currentIndex" (click)="setActiveEjemplar(ejemplar, i)">
 
         <div class="card mb-3 ms-5 shadow rounded" style="width: 15rem;">
-          <img src="{{ejemplar.portada}}" class="card-img-top" alt="libro">
+          <img src="{{ejemplar.portada}}" class="card-img-top" alt="ejemplar">
           <div class="card-body text-center">
             <p class="card-text text-wrap fw-bold">{{ejemplar.libro.titulo}}</p>
             <span>
@@ -39,6 +39,6 @@
       </div>
     </div>
   </div>
- <ng-template #espera> Esperando datos...</ng-template>-
+ <ng-template #espera> Esperando datos...</ng-template>
 </div>
 

@@ -9,11 +9,12 @@ import { EditorialService } from 'src/app/services/editorial.service';
 })
 export class PrincipalEditorialComponent implements OnInit {
 
-  editoriales:any = null;
+  editoriales?: Editorial [];
 
-  nombre:string="";
+  nombre = '';
 
-  editorial:any = null;
+  editorial: Editorial = {};
+  currentIndex = -1;
 
   constructor(private editorialService: EditorialService) { }
 
@@ -30,21 +31,27 @@ export class PrincipalEditorialComponent implements OnInit {
       },
       error =>{
         console.log("Problemas");
+        console.log("error");
       }
       );
   }
 
   getEditorialByName(){
+
+    this.editorial = {};
+    this.currentIndex = -1;
+
     this.editorialService.getNombre(this.nombre)
     .subscribe(
       result =>{
         this.editoriales = result;
-        this.editorial = Object.keys(this.editoriales).map((key) => ({type: key, value: this.editoriales[key]}));
-        this.editoriales =[{id:this.editorial[0].value,nombre:this.editorial[1].value}];
+      /*  this.editorial = Object.keys(this.editoriales).map((key) => ({type: key, value: this.editoriales[key]}));
+        this.editoriales =[{id:this.editorial[0].value,nombre:this.editorial[1].value}];*/
         console.log(this.editoriales);
       },
       error =>{
         console.log("Problemas");
+        console.log("error");
       }
       );
   }

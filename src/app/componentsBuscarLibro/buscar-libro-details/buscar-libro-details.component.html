@@ -12,12 +12,14 @@
         <tbody>
         <tr>
           <th scope="row" class="text-end">Estatus </th>
-          <td class="text-start" *ngIf="!currentEjemplar.statusLibre">
+          <td class="text-start" *ngIf="!currentEjemplar.statusLibre; else elseBlock">
             <button class="btn btn-custom-red me-2 text-custom-red btn-xs">bg</button>
           </td>
-          <td class="text-start" *ngIf="currentEjemplar.statusLibre">
+          <ng-template #elseBlock>
+          <td class="text-start">
             <button class="btn btn-custom-green me-2 text-custom-green btn-xs">bg</button>
           </td>
+          </ng-template>
         </tr>
         <tr>
           <th scope="row" class="text-end">Autor </th>

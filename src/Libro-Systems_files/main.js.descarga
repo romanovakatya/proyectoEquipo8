@@ -34,9 +34,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "AppRoutingModule": () => (/* binding */ AppRoutingModule)
 /* harmony export */ });
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ 1258);
-/* harmony import */ var _componentsLibro_libro_list_libro_list_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./componentsLibro/libro-list/libro-list.component */ 9060);
-/* harmony import */ var _componentsLibro_libro_details_libro_details_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./componentsLibro/libro-details/libro-details.component */ 3025);
-/* harmony import */ var _componentsLibro_add_libro_add_libro_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./componentsLibro/add-libro/add-libro.component */ 7);
+/* harmony import */ var _componentsLibro_libro_list_libro_list_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./componentsLibro/ejemplar-list/ejemplar-list.component */ 9060);
+/* harmony import */ var _componentsLibro_libro_details_libro_details_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./componentsLibro/ejemplar-details/ejemplar-details.component */ 3025);
+/* harmony import */ var _componentsLibro_add_libro_add_libro_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./componentsLibro/add-ejemplar/add-ejemplar.component */ 7);
 /* harmony import */ var _components_Editorial_mostrar_editorial_mostrar_editorial_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components-Editorial/mostrar-editorial/mostrar-editorial.component */ 65);
 /* harmony import */ var _components_Editorial_principal_editorial_principal_editorial_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components-Editorial/principal-editorial/principal-editorial.component */ 858);
 /* harmony import */ var _components_Editorial_update_editorial_update_editorial_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components-Editorial/update-editorial/update-editorial.component */ 85);
@@ -165,9 +165,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/platform-browser */ 1570);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app-routing.module */ 158);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.component */ 5041);
-/* harmony import */ var _componentsLibro_add_libro_add_libro_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./componentsLibro/add-libro/add-libro.component */ 7);
-/* harmony import */ var _componentsLibro_libro_details_libro_details_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./componentsLibro/libro-details/libro-details.component */ 3025);
-/* harmony import */ var _componentsLibro_libro_list_libro_list_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./componentsLibro/libro-list/libro-list.component */ 9060);
+/* harmony import */ var _componentsLibro_add_libro_add_libro_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./componentsLibro/add-ejemplar/add-ejemplar.component */ 7);
+/* harmony import */ var _componentsLibro_libro_details_libro_details_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./componentsLibro/ejemplar-details/ejemplar-details.component */ 3025);
+/* harmony import */ var _componentsLibro_libro_list_libro_list_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./componentsLibro/ejemplar-list/ejemplar-list.component */ 9060);
 /* harmony import */ var _components_logout_logout_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/logout/logout.component */ 430);
 /* harmony import */ var _component_Inicio_inicio_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./component-Inicio/inicio.component */ 19);
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ 1288);
@@ -543,7 +543,7 @@ UpdateEditorialComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_M
 
 /***/ 7:
 /*!******************************************************************!*\
-  !*** ./src/app/componentsLibro/add-libro/add-libro.component.ts ***!
+  !*** ./src/app/componentsLibro/add-ejemplar/add-ejemplar.component.ts ***!
   \******************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -562,7 +562,7 @@ class AddLibroComponent {
     }
 }
 AddLibroComponent.ɵfac = function AddLibroComponent_Factory(t) { return new (t || AddLibroComponent)(); };
-AddLibroComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AddLibroComponent, selectors: [["app-add-libro"]], decls: 36, vars: 0, consts: [[1, "container", "mt-4"], [1, "d-flex", "justify-content-between", "align-items-center"], ["routerLink", "/libros", 1, "btn", "btn-custom-dark-blue"], ["routerLink", "/libros", 1, "btn", "btn-custom-orange"], [1, "card", "m-auto", 2, "width", "30rem"], [1, "card-body"], [1, "table"], ["scope", "row", 1, "text-end"], [1, "text-start"], ["routerLink", "/editoriales", 1, "btn", "btn-custom-medio-blue"]], template: function AddLibroComponent_Template(rf, ctx) { if (rf & 1) {
+AddLibroComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AddLibroComponent, selectors: [["app-add-ejemplar"]], decls: 36, vars: 0, consts: [[1, "container", "mt-4"], [1, "d-flex", "justify-content-between", "align-items-center"], ["routerLink", "/libros", 1, "btn", "btn-custom-dark-blue"], ["routerLink", "/libros", 1, "btn", "btn-custom-orange"], [1, "card", "m-auto", 2, "width", "30rem"], [1, "card-body"], [1, "table"], ["scope", "row", 1, "text-end"], [1, "text-start"], ["routerLink", "/editoriales", 1, "btn", "btn-custom-medio-blue"]], template: function AddLibroComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "button", 2);
@@ -628,7 +628,7 @@ AddLibroComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0
 
 /***/ 3025:
 /*!**************************************************************************!*\
-  !*** ./src/app/componentsLibro/libro-details/libro-details.component.ts ***!
+  !*** ./src/app/componentsLibro/ejemplar-details/ejemplar-details.component.ts ***!
   \**************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -647,7 +647,7 @@ class LibroDetailsComponent {
     }
 }
 LibroDetailsComponent.ɵfac = function LibroDetailsComponent_Factory(t) { return new (t || LibroDetailsComponent)(); };
-LibroDetailsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LibroDetailsComponent, selectors: [["app-libro-details"]], decls: 41, vars: 0, consts: [[1, "container", "mt-4"], [1, "d-flex", "justify-content-between", "align-items-center"], ["routerLink", "/libros", 1, "btn", "btn-custom-dark-blue"], ["routerLink", "/libros", 1, "btn", "btn-custom-light-brown"], [1, "card", "m-auto", 2, "width", "30rem"], ["src", "https://lh3.googleusercontent.com/proxy/8JCbnSO9nrZL0DdtoGOu_GqInf8oCHvFIssEljibL_Q1jHUfedLAUfNq4BaVLnrM6iquWMc0oDrw3Z4di7ZYjP3dXooAUlbjk0zt2J8I7xscIcCET0yzLsP4_sbhp3zjCAYfhRZ6tlRIUg-OAUiz", "alt", "portada", 1, "card-img-top", "w-75", "align-self-center"], [1, "card-body"], [1, "table"], ["scope", "row", 1, "text-end"], [1, "text-start"]], template: function LibroDetailsComponent_Template(rf, ctx) { if (rf & 1) {
+LibroDetailsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LibroDetailsComponent, selectors: [["app-ejemplar-details"]], decls: 41, vars: 0, consts: [[1, "container", "mt-4"], [1, "d-flex", "justify-content-between", "align-items-center"], ["routerLink", "/libros", 1, "btn", "btn-custom-dark-blue"], ["routerLink", "/libros", 1, "btn", "btn-custom-light-brown"], [1, "card", "m-auto", 2, "width", "30rem"], ["src", "https://lh3.googleusercontent.com/proxy/8JCbnSO9nrZL0DdtoGOu_GqInf8oCHvFIssEljibL_Q1jHUfedLAUfNq4BaVLnrM6iquWMc0oDrw3Z4di7ZYjP3dXooAUlbjk0zt2J8I7xscIcCET0yzLsP4_sbhp3zjCAYfhRZ6tlRIUg-OAUiz", "alt", "portada", 1, "card-img-top", "w-75", "align-self-center"], [1, "card-body"], [1, "table"], ["scope", "row", 1, "text-end"], [1, "text-start"]], template: function LibroDetailsComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "button", 2);
@@ -722,7 +722,7 @@ LibroDetailsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODU
 
 /***/ 9060:
 /*!********************************************************************!*\
-  !*** ./src/app/componentsLibro/libro-list/libro-list.component.ts ***!
+  !*** ./src/app/componentsLibro/ejemplar-list/ejemplar-list.component.ts ***!
   \********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -745,7 +745,7 @@ class LibroListComponent {
     }
 }
 LibroListComponent.ɵfac = function LibroListComponent_Factory(t) { return new (t || LibroListComponent)(); };
-LibroListComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: LibroListComponent, selectors: [["app-libro-list"]], decls: 47, vars: 0, consts: [[1, "mt-5"], [1, "navbar", "navbar-expand", "navbar-light", "bg-bone", "mt-2"], [1, "container-fluid"], ["id", "navbarSupportedContent", 1, "collapse", "navbar-collapse", "justify-content-between"], [1, "navbar-nav", "mb-2", "mb-lg-0"], [1, "nav-item"], ["routerLink", "/addLibro", 1, "btn", "btn-custom-dark-blue"], [1, "col-md-7", "me-2"], [1, "input-group"], ["type", "search", "placeholder", "Buscar por el t\u00EDtulo, autor o ISBN", "aria-label", "Search", 1, "form-control"], ["type", "submit", 1, "btn", "btn-outline-custom-light-brown"], [1, "list", "row", "justify-content-center", "mt-4"], [1, "col-md-7", "ms-4"], [1, "list-group"], [1, "list-group-item", "d-flex", "justify-content-between", "align-items-center"], [1, "text-wrap", "fw-bold"], [1, "btn", "btn-custom-red", "me-2", "text-custom-red", "btn-xs"], ["routerLink", "/libros/1", 1, "btn", "btn-custom-light-blue"], [1, "btn", "btn-custom-orange", "ms-2"], [1, "btn", "btn-custom-green", "me-2", "text-custom-green", "btn-xs"], [1, "btn", "btn-custom-light-blue"]], template: function LibroListComponent_Template(rf, ctx) { if (rf & 1) {
+LibroListComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: LibroListComponent, selectors: [["app-ejemplar-list"]], decls: 47, vars: 0, consts: [[1, "mt-5"], [1, "navbar", "navbar-expand", "navbar-light", "bg-bone", "mt-2"], [1, "container-fluid"], ["id", "navbarSupportedContent", 1, "collapse", "navbar-collapse", "justify-content-between"], [1, "navbar-nav", "mb-2", "mb-lg-0"], [1, "nav-item"], ["routerLink", "/addLibro", 1, "btn", "btn-custom-dark-blue"], [1, "col-md-7", "me-2"], [1, "input-group"], ["type", "search", "placeholder", "Buscar por el t\u00EDtulo, autor o ISBN", "aria-label", "Search", 1, "form-control"], ["type", "submit", 1, "btn", "btn-outline-custom-light-brown"], [1, "list", "row", "justify-content-center", "mt-4"], [1, "col-md-7", "ms-4"], [1, "list-group"], [1, "list-group-item", "d-flex", "justify-content-between", "align-items-center"], [1, "text-wrap", "fw-bold"], [1, "btn", "btn-custom-red", "me-2", "text-custom-red", "btn-xs"], ["routerLink", "/libros/1", 1, "btn", "btn-custom-light-blue"], [1, "btn", "btn-custom-orange", "ms-2"], [1, "btn", "btn-custom-green", "me-2", "text-custom-green", "btn-xs"], [1, "btn", "btn-custom-light-blue"]], template: function LibroListComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "nav", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div", 2);
@@ -753,7 +753,7 @@ LibroListComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "ul", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "li", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "button", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](7, "A\u00F1adir libro");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](7, "A\u00F1adir ejemplar");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();

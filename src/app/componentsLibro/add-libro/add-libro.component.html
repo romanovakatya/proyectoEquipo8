@@ -3,32 +3,36 @@
     <button routerLink="/libros" class="btn btn-custom-dark-blue pe-5 ps-5">Back</button>
     <app-logout></app-logout>
   </div>
-  <div class="card m-auto shadow bg-body rounded" style="width: 35rem;"> <!--*ngIf="character!=null; else espera"-->
+  <div class="card m-auto shadow bg-body rounded" style="width: 35rem;" *ngIf="!submitted">
     <div class="card-body">
       <table class="table">
         <tbody>
         <tr>
           <th scope="row" class="text-end">Autor</th>
           <td class="text-start">
-            <input type="text" id="inputAutor" class="form-control" aria-describedby="Autor">
+            <input type="text" id="inputAutor" class="form-control" aria-describedby="Autor"
+                   required [(ngModel)] = "ejemplar.libro.autor" name = "autor"/>
           </td>
         </tr>
         <tr>
           <th scope="row" class="text-end">Título</th>
           <td class="text-start">
-            <input type="text" id="inputTitulo" class="form-control">
+            <input type="text" id="inputTitulo" class="form-control"
+                   required [(ngModel)] = "ejemplar.libro.titulo" name = "titulo"/>
           </td>
         </tr>
         <tr>
           <th scope="row" class="text-end">Número páginas</th>
           <td class="text-start">
-            <input type="text" id="inputPaginas" class="form-control">
+            <input type="text" id="inputPaginas" class="form-control"
+                   required [(ngModel)] = "ejemplar.numeroPaginas" name = "paginas"/>
           </td>
         </tr>
         <tr>
           <th scope="row" class="text-end">ISBN</th>
           <td class="text-start">
-            <input type="text" id="inputIsbn" class="form-control">
+            <input type="text" id="inputIsbn" class="form-control"
+                   required [(ngModel)] = "ejemplar.isbn" name = "isbn"/>
           </td>
         </tr>
         <tr>
@@ -40,15 +44,20 @@
         <tr>
           <th scope="row" class="text-end">Descripción</th>
           <td class="text-start">
-            <textarea class="form-control" id="description" rows="3"></textarea>
+            <textarea class="form-control" id="description"
+                      rows="3" required [(ngModel)] = "ejemplar.libro.descripcion" name = "descripcion"></textarea>
           </td>
         </tr>
         </tbody>
       </table>
     </div>
     <div class="align-self-center mb-4">
-      <button class="btn btn-custom-orange pe-5 ps-5">Guardar</button> <!--(click)="saveBook()" -->
+      <button class="btn btn-custom-orange pe-5 ps-5" (click)="saveLibro()">Guardar</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Libro ha sido creado y añadido en tu librería!</h4>
+      <button class="btn btn-success" (click)="newLibro()">Add</button>
     </div>
   </div>
-  <!--<ng-template #espera> Esperando datos...</ng-template>-->
 </div>
