@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { EjemplaresPrestado } from '../models/ejemplares-prestado.model';
 
-
-const baseUrl = 'https://libro-systems.herokuapp.com/api/ejemplaresPrestados';
+const baseUrl = 'http://localhost:8181/api/ejemplaresPrestados';
+//const baseUrl = 'https://libro-systems.herokuapp.com/api/ejemplaresPrestados';
 
 @Injectable({
   providedIn: 'root'
@@ -22,8 +22,8 @@ export class EjemplaresPrestadoService {
   }
 
   //Busca por id de usuario
-  getUsuario(usuario: any): Observable<EjemplaresPrestado> {
-    return this.http.get(`${baseUrl}/usuario/${usuario}`);
+  findByUsuarioPrestatario(usuario: any): Observable<EjemplaresPrestado[]> {
+    return this.http.get<EjemplaresPrestado[]>(`${baseUrl}/usuario/${usuario}`);
   }
 
   create(data: any): Observable<any> {

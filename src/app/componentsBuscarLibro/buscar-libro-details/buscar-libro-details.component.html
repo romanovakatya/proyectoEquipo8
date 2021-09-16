@@ -22,7 +22,7 @@
           </ng-template>
         </tr>
         <tr>
-          <th scope="row" class="text-end">Autor </th>
+          <th scope="row" class="text-end">Autor</th>
           <td class="text-start">{{currentEjemplar.libro.autor}}</td>
         </tr>
         <tr>
@@ -50,7 +50,7 @@
     </div>
 
     <div class="d-flex justify-content-center align-items-center mb-4">
-      <button routerLink="/contacts/1" class="btn btn-custom-light-blue">Mostrar Propietario</button>
+      <button routerLink="/contacts/{{currentEjemplar.propietario.id}}" class="btn btn-custom-light-blue">Mostrar Propietario</button>
       <button class="btn btn-custom-light-brown ms-3 ps-5 pe-5" (click)="leer()">Leer</button>
     </div>
   </div>

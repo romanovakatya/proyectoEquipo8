@@ -21,4 +21,8 @@ export class UsuarioService {
     return this.http.post(baseUrl, data);
   }
 
+  findUserByUsername(username: string): Observable<Usuario>{
+    return this.http.get(`${baseUrl}/username/${username}`);
+  }
+
 }

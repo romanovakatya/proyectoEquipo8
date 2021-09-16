@@ -1,7 +1,7 @@
 export class EjemplaresPrestado {
   id?: any;
-  idEjemplar?: number;
-  idUsuarioPrestamo?: number;
+  ejemplar?: any;
+  prestatario?: any;
   inicioPrestamo?: string;
   finPrestamo?: string;
 }
