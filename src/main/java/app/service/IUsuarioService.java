@@ -13,6 +13,8 @@ public interface IUsuarioService {
 	
 	public Usuario usuarioXID(Long id); //Leer datos de un Usuario READ
 	
+	public Usuario listarUsuarioUsername(String username); //Leer datos de un Usuario READ
+	
 	public Usuario actualizarUsuario(Usuario usuario); //Actualiza datos del Usuario UPDATE
 	
 	public void eliminarUsuario(Long id);// Elimina el Usuario DELETE

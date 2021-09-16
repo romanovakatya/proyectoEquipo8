@@ -38,5 +38,11 @@ public class UsuarioServiceImpl implements IUsuarioService {
 	public void eliminarUsuario(Long id) {
 		usuariodao.deleteById(id);
 	}
+
+	@Override
+	public Usuario listarUsuarioUsername(String username) {
+		
+		return usuariodao.findByUsername(username);
+	}
 	
 }
