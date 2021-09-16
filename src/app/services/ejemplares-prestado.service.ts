@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { EjemplaresPrestado } from '../models/ejemplares-prestado.model';
 
-const baseUrl = 'http://localhost:8181/api/ejemplaresPrestados';
-//const baseUrl = 'https://libro-systems.herokuapp.com/api/ejemplaresPrestados';
+//const baseUrl = 'http://localhost:8181/api/ejemplaresPrestados';
+const baseUrl = 'https://libro-systems.herokuapp.com/api/ejemplaresPrestados';
 
 @Injectable({
   providedIn: 'root'

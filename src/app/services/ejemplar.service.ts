@@ -4,8 +4,8 @@ import {Observable} from "rxjs";
 import {Ejemplar} from "../models/ejemplar.model";
 
 
-//const baseUrl = 'https://libro-systems.herokuapp.com/api/ejemplares';
-const baseUrl = 'http://localhost:8181/api/ejemplares';
+const baseUrl = 'https://libro-systems.herokuapp.com/api/ejemplares';
+//const baseUrl = 'http://localhost:8181/api/ejemplares';
 
 @Injectable({
   providedIn: 'root'

@@ -62,20 +62,4 @@ export class LibroPrestadoListComponent implements OnInit {
       );
   }
 
-
- /* searchIsbn(): void {
-    this.currentEjemplarPrestado = {};
-    this.currentIndex = -1;
-
-    this.ejemplarPrestadoService.findByISBN(this.isbn)
-      .subscribe(
-        data => {
-          this.ejemplares = data;
-          console.log(data);
-        },
-        error => {
-          console.log(error);
-        }
-      );
-  }*/
 }

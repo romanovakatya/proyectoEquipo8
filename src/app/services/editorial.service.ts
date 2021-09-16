@@ -3,8 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Editorial } from '../models/editorial.model';
 
-//const baseUrl = 'https://libro-systems.herokuapp.com/api/editoriales';
-const baseUrl = 'http://localhost:8181/api/editoriales';
+const baseUrl = 'https://libro-systems.herokuapp.com/api/editoriales';
+//const baseUrl = 'http://localhost:8181/api/editoriales';
 
 const httpOptions = {
   headers: new HttpHeaders({
